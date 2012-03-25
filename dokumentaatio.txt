@@ -1,0 +1,37 @@
+Ohjelmoinnin harjoitustyö kevät 2012
+Mika Kekäläinen
+
+DOKUMENTAATIO 1
+
+Työn aihe: Kimble
+Pelin idea:
+Kimblessä on 1-4 pelaajaa, jotka heittävät vuorotellen noppaa.
+Jokaisella pelaajalla on 4 pelinappulaa kotipesässä.
+Pelinappulan saa aktiiviseksi, kun pelaaja saa nopasta kuusi.
+Pelaaja, joka saa kaikki omat nappulana ensimmäisenä maaliin on voittaja.
+Vastustajan pelaajia voidaan syödä takaisin kotipesään, jos tullaan samaan ruutuun.
+
+attribuutteja: pelaaja, pelinappula, noppa, kotipesä, maali, voittaja, aloittaja, pelikierros, pelivuoro
+
+Pelaaja:
+-nimi(jotta voidaan erottua) tai tietty pelinappulan väri(sin/pun/kel/vihr)
+-lukumäärä 1..4
+-pelinappuloita 4kpl per pelaaja
+
+Pelinappula:
+-alustaminen eli sijainti alussa on kotipesä, kunnes heitetään 6 nopalla
+-siirtyminen nopan silmäluvun mukaan eteenpäin, jos mahdollista(ei toista omaa nappulaa jo k.o. kohdassa)
+-vastustajan syöminen
+-maaliin pääseminen
+
+noppa:
+-noppa saa arvot 1-6
+
+aloittaja:
+-voidaan arpoa pelaajien kesken nopalla, suurin silmäluku voittaa.
+
+pelikehys:
+-kysyttävä kuinka monta pelaajaa 1..4 on pelaamassa (ja kuka pelaa milläkin värillä)
+
+pelikierros:
+-huolehtii, että jokainen 1..4 pelaajasta heittää noppaa, ja etenee pelinappulalla (jos mahdollista).
