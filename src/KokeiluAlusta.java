@@ -18,6 +18,7 @@ public class KokeiluAlusta {
      * @param args
      */
     public static void main(String[] args) {
+        //tyhjä kommennti
         while (true) {
             System.out.println("\nValitse toiminto:");
             System.out.println("1.Lue saannot  2.Aloita pelaaminen  3.Lopeta");
