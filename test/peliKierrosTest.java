@@ -32,7 +32,7 @@ public class peliKierrosTest {
 
     @Before
     public void setUp() {
-        eka.alustaPelaaja("punainen");
+        eka.alustaPelaaja("punainen",1);
         vari = eka.nappulanVari;
 
     }
