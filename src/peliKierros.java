@@ -1,3 +1,4 @@
+
 /**
  * 
  * @author mikakekalainen
@@ -8,33 +9,34 @@ public class peliKierros {
     peliNappula pylpyra = new peliNappula("");
     String nappulanVari = "";
     int m = 0;
+    int nappulaLkm = 1;
 
     /**
      * alustetaan pelaaja
      * @param pelaajanVari minkä värinen pelaaja haluaa olla
      */
-    public void alustaPelaaja(String pelaajanVari) {
+    public void alustaPelaaja(String pelaajanVari, int nappulanNumero) {
         pylpyra = new peliNappula(pelaajanVari);
         pylpyra.setNappulanSijainti(0, 0);
         this.nappulanVari = pelaajanVari;
+        nappulaLkm = nappulanNumero;
     }
 
     /**
-     * Pelataan kierros 
+     * Pelaaja heittaa kerran noppaa ja 
+     * pelaajan nappula saa mahdollisesti uuden sijainnin riippuen pelitilanteesta  
      */
-    public void pelaaKierros() {
+    public void pelaajaHeittaaNoppaaKerran() {
         nopanHeitto heitto = new nopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
         if (pylpyra.getNappulanSijainti(m) == 0 && nopanSilmaluku < 6) {
-        }
-        else if (pylpyra.getNappulanSijainti(m) == 0 && nopanSilmaluku == 6) {
+        } else if (pylpyra.getNappulanSijainti(m) == 0 && nopanSilmaluku == 6) {
             pylpyra.liikutaNappulaa(1);
-            System.out.println(this.nappulanVari + " nappulan sijainti = " + pylpyra.getNappulanSijainti(m));
+            System.out.println(this.nappulanVari + " nappulan" + nappulaLkm + " sijainti = " + pylpyra.getNappulanSijainti(m));
         } else {
             pylpyra.liikutaNappulaa(nopanSilmaluku);
-            System.out.println(this.nappulanVari + " nappulan sijainti = " + pylpyra.getNappulanSijainti(m));
+            System.out.println(this.nappulanVari + " nappulan" + nappulaLkm + " sijainti = " + pylpyra.getNappulanSijainti(m));
         }
-
     }
 
     /**
@@ -55,5 +57,19 @@ public class peliKierros {
         } else {
             return false;
         }
+    }
+
+    public boolean olioPelaaKierroksensa(int kierroksenNro) {
+        pelaajaHeittaaNoppaaKerran();
+        if (tarkistaMaaliinPaasy() == true && nappulaLkm <= 4) {
+            if (nappulaLkm == 4) {
+                return true;
+            } else {
+                nappulaLkm++;
+                alustaPelaaja(this.nappulanVari, nappulaLkm);
+                return false;
+            }
+        }
+        return false;
     }
 }

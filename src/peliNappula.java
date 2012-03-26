@@ -16,7 +16,9 @@ public class peliNappula {
     public peliNappula(String vari) {
         pelaajanNappulanVari = vari;
     }
-
+    /*public String getPeliNappulanVari(){
+        return pelaajanNappulanVari;
+    }*/
     /**
      * lisätään pelinappula
      * @param muoto nappulan muoto
