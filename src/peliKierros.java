@@ -52,7 +52,7 @@ public class peliKierros {
             } else if (m > 0 && pylpyra.getNappulanSijainti(m) == pylpyra.getNappulanSijainti(m - 1)) {
             return false;
             } else {*/
-            System.out.println("Pelaajan " + this.nappulanVari + " on paassyt maaliin");
+            System.out.println("Pelaajan " + this.nappulanVari +" nappula" + nappulaLkm +  " on paassyt maaliin");
             return true;
             //}
         } else {
