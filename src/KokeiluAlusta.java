@@ -13,6 +13,10 @@ public class KokeiluAlusta {
      */
     static Scanner lukija = new Scanner(System.in);
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         while (true) {
             System.out.println("\nValitse toiminto:");

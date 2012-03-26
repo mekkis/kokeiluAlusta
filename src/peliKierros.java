@@ -14,6 +14,7 @@ public class peliKierros {
     /**
      * alustetaan pelaaja
      * @param pelaajanVari minkä värinen pelaaja haluaa olla
+     * @param nappulanNumero  
      */
     public void alustaPelaaja(String pelaajanVari, int nappulanNumero) {
         pylpyra = new peliNappula(pelaajanVari);
@@ -59,6 +60,11 @@ public class peliKierros {
         }
     }
 
+    /**
+     * 
+     * @param kierroksenNro
+     * @return
+     */
     public boolean olioPelaaKierroksensa(int kierroksenNro) {
         pelaajaHeittaaNoppaaKerran();
         if (tarkistaMaaliinPaasy() == true && nappulaLkm <= 4) {
