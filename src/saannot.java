@@ -5,7 +5,7 @@
 public class saannot {
  
     /**
-     * 
+     * Kimblen pelaamisen saannot lyhyesti.
      */
     public void tulostaSaannot(){
         System.out.println("Kimblen saannot:");

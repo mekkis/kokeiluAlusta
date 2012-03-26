@@ -11,7 +11,7 @@ public class pelaaPeli {
     int i = 1;
 
     /**
-     * Kaikki kimblen pelaamiseen tapahtuva
+     * kimblen pelaaminen
      */
     public pelaaPeli() {
         System.out.println("Tervetuloa pelaamaan kimblea!! \n");
@@ -27,12 +27,12 @@ public class pelaaPeli {
         while (true) {
 
             System.out.println("\nKierros: " + i);
-            if (mikko.olioPelaaKierroksensa(i) == true) {
+            if (mikko.olioPelaaKierroksensa() == true) {
                 System.out.println("Onnittelut voitit!");
                 break;
 
             }
-            if (tekoAly.olioPelaaKierroksensa(i) == true) {
+            if (tekoAly.olioPelaaKierroksensa() == true) {
                 System.out.println("Tietokone on voittanut!");
                 break;
             } else {

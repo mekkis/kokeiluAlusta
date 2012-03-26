@@ -61,11 +61,16 @@ public class peliKierros {
     }
 
     /**
-     * 
-     * @param kierroksenNro
-     * @return
+     * pelaaja(olio) pelaa kierroksen peliä
+     * 1.olio heittää noppa
+     * 2.tarkistaa olion maaliinpaasyn ja olion nappuloiden lkm:n
+     * - palauttaa true, jos kaikki 4 nappulaa maalissa
+     * - jos 1-3 nappulaa maalissa, alustetaan seuraava nappula peliin
+     * ja palauttaa false
+     * - jos nappula ei maalissa, palauttaa false
+     * @return boolean
      */
-    public boolean olioPelaaKierroksensa(int kierroksenNro) {
+    public boolean olioPelaaKierroksensa() {
         pelaajaHeittaaNoppaaKerran();
         if (tarkistaMaaliinPaasy() == true && nappulaLkm <= 4) {
             if (nappulaLkm == 4) {

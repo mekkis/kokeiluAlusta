@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class KokeiluAlusta {
 
     /**
-     * Pääohjelma, jolla valitaan mitä peliä pelataan
+     * Pääohjelma, voidaan lukea säännöt, pelata tai lopettaa ohjelma.
      * @param args 
      */
     static Scanner lukija = new Scanner(System.in);
