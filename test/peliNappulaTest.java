@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -15,6 +16,8 @@ import static org.junit.Assert.*;
  * @author mikakekalainen
  */
 public class peliNappulaTest {
+
+    peliNappula silinteri = new peliNappula("red");
 
     public peliNappulaTest() {
     }
@@ -56,36 +59,40 @@ public class peliNappulaTest {
 
     @Test
     public void lisaaPelinappulaTesti() {
-        peliNappula lp = new peliNappula("red");
-        lp.lisaaPelinappula("Testi-teppo", "donerkebap");
+        silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
     }
 
     @Test
     public void lisaaPelinappulaLkmTesti() {
-        peliNappula lk = new peliNappula("red");
-        lk.lisaaPelinappula("Testi-teppo", "donerkebap");
-        assertTrue(lk.getNappuloidenLkm() == 1);
+        silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
+        assertTrue(silinteri.getNappuloidenLkm() == 1);
     }
 
     @Test
     public void nappulanSijaintiTesti() {
-        peliNappula hattu = new peliNappula("sin");
-        int paikka = hattu.setNappulanSijainti(0, 23);
-        assertTrue(paikka == hattu.getNappulanSijainti(0));
+        int paikka = silinteri.setNappulanSijainti(0, 23);
+        assertTrue(paikka == silinteri.getNappulanSijainti(0));
     }
 
     @Test
     public void nappulanLkmTesti() {
-        peliNappula hattu = new peliNappula("sin");
-        hattu.lisaaPelinappula("pallo", "sinertava");
-        assertTrue(hattu.getNappuloidenLkm() == 1);
+        silinteri.lisaaPelinappula("pallo", "sinertava");
+        assertTrue(silinteri.getNappuloidenLkm() == 1);
     }
 
     @Test
     public void nappulanTarkistusTesti() {
-        peliNappula hattu = new peliNappula("sin");
-        hattu.lisaaPelinappula("pallo", "sinertava");
-        boolean variMuoto = hattu.tarkistaNappula("pallo", "sinertava");
-        assertEquals(variMuoto,true);
+        silinteri.lisaaPelinappula("pallo", "keltainen");
+        boolean variMuoto = silinteri.tarkistaNappula("pallo", "keltainen");
+        assertEquals(variMuoto, true);
     }
+
+    @Test
+    public void getPelinappulaVariTesti() {
+        assertTrue(silinteri.getPeliNappulanVari().equals("red"));
+    }
+    /*public void setPelinappulanVari() {
+    System.out.println("Valitse pelinappulan vari: ");
+    pelaajanNappulanVari = lukija.nextLine();
+    }*/
 }

@@ -1,8 +1,12 @@
+
+import java.util.Scanner;
+
 /**
  * 
  * @author mikakekalainen
  */
 public class peliNappula {
+    static Scanner lukija = new Scanner(System.in);
 
     private int[] liike = {0, 0, 0, 0};
     private String pelaajanNappulanVari = "punainen";
@@ -10,19 +14,30 @@ public class peliNappula {
     private String nappulanMuoto = "kartio";
 
     /**
-     * 
-     * @param vari pelinappulan väri
+     * Luokan konstruktori
+     * @param vari pelinappulan vari
      */
     public peliNappula(String vari) {
         pelaajanNappulanVari = vari;
     }
-    /*public String getPeliNappulanVari(){
-        return pelaajanNappulanVari;
-    }*/
     /**
-     * lisätään pelinappula
+     * Setteri asettaa pelinappulalle jonkin vari (String) 
+     */
+    public void setPelinappulanVari() {
+        System.out.println("Valitse pelinappulan vari: ");
+        pelaajanNappulanVari = lukija.nextLine();
+    }
+    /**
+     * Getteri hakee pelinappulan varin
+     * @return String
+     */
+    public String getPeliNappulanVari(){
+        return pelaajanNappulanVari;
+    }
+    /**
+     * lisataan pelinappula
      * @param muoto nappulan muoto
-     * @param vari nappulan väri
+     * @param vari nappulan vari
      */
     public void lisaaPelinappula(String muoto, String vari) {
         this.pelaajanNappulanVari = vari;

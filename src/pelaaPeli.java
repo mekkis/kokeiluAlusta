@@ -9,28 +9,29 @@ public class pelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
     int i;
+    String nappulanVari = "";
 
     /**
      * kierrosten alustus
      */
     public pelaaPeli() {
-        System.out.println("Tervetuloa pelaamaan kimblea!");         
+        System.out.println("Tervetuloa pelaamaan kimblea!");
         i = 1;
     }
 
     /**
      * kimblen pelaaminen 3 tietokone pelaajaa vastaan.
+     * Lisataan pelaajat, valitaan pelinappuloiden vari ja aletaan heittaa noppaa
      */
     public void pelaus() {
-        System.out.println("Valitse pelinappulan vari: ");
-        String nappulanVari = lukija.nextLine();
-
+        
         peliKierros mikko = new peliKierros();
         peliKierros tekoAlyLila = new peliKierros();
         peliKierros tekoAlyPurppura = new peliKierros();
         peliKierros tekoAlyGold = new peliKierros();
-
-        mikko.alustaPelaaja(nappulanVari, 1);
+        
+        mikko.pylpyra.setPelinappulanVari();
+        mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari(), 1);
         tekoAlyLila.alustaPelaaja("lila", 1);
         tekoAlyPurppura.alustaPelaaja("purppura", 1);
         tekoAlyGold.alustaPelaaja("gold", 1);
