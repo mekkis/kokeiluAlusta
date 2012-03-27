@@ -16,6 +16,8 @@ import static org.junit.Assert.*;
  */
 public class pelaaPeliTest {
 
+    pelaaPeli kekkonen = new pelaaPeli();
+
     public pelaaPeliTest() {
     }
 
@@ -40,17 +42,13 @@ public class pelaaPeliTest {
 
     @Test
     public void pelaaPeliIndeksiTesti() {
-        pelaaPeli kekkonen = new pelaaPeli();
-        int indeksi = kekkonen.i;
+        int indeksi = kekkonen.kierros;
         assertTrue(indeksi == 1);
     }
 
-    /*@Test
-    public void pelaaPeliTesti() {
-        pelaaPeli kekkonen = new pelaaPeli();
-        kekkonen.pelaus();
-        int indeksi = kekkonen.i;
-        
-        assertTrue(indeksi > 1);
-    }*/
+    @Test
+    public void pelaajanNappulallaEiVariaAluksiTesti() {
+        assertTrue(kekkonen.nappulanVari.isEmpty());
+    }
 }
+

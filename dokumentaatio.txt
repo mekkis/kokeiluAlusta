@@ -1,26 +1,26 @@
-Ohjelmoinnin harjoitustyö kevät 2012
+Ohjelmoinnin harjoitustyo kevat 2012
 Mika Kekäläinen
 
 DOKUMENTAATIO 1
 
-Työn aihe: Kimble
+Tyon aihe: Kimble
 Pelin idea:
-Kimblessä on 1-4 pelaajaa, jotka heittävät vuorotellen noppaa.
-Jokaisella pelaajalla on 4 pelinappulaa kotipesässä.
+Kimblessa on 1-4 pelaajaa, jotka heittavat vuorotellen noppaa.
+Jokaisella pelaajalla on 4 pelinappulaa kotipesassa.
 Pelinappulan saa aktiiviseksi, kun pelaaja saa nopasta kuusi.
 Pelaaja, joka saa kaikki omat nappulana ensimmäisenä maaliin on voittaja.
-Vastustajan pelaajia voidaan syödä takaisin kotipesään, jos tullaan samaan ruutuun.
+Vastustajan pelaajia voidaan syoda takaisin kotipesaan, jos tullaan samaan ruutuun.
 
 attribuutteja: pelaaja, pelinappula, noppa, kotipesä, maali, voittaja, aloittaja, pelikierros, pelivuoro
 
 Pelaaja:
--nimi(jotta voidaan erottua) tai tietty pelinappulan väri(sin/pun/kel/vihr)
--lukumäärä 1..4
+-nimi(jotta voidaan erottua) tai tietty pelinappulan vari(sin/pun/kel/vihr)
+-lukumaara 1..4
 -pelinappuloita 4kpl per pelaaja
 
 Pelinappula:
--alustaminen eli sijainti alussa on kotipesä, kunnes heitetään 6 nopalla
--siirtyminen nopan silmäluvun mukaan eteenpäin, jos mahdollista(ei toista omaa nappulaa jo k.o. kohdassa)
+-alustaminen eli sijainti alussa on kotipesa, kunnes heitetään 6 nopalla
+-siirtyminen nopan silmaluvun mukaan eteenpäin, jos mahdollista(ei toista omaa nappulaa jo k.o. kohdassa)
 -vastustajan syöminen
 -maaliin pääseminen
 
@@ -28,10 +28,10 @@ noppa:
 -noppa saa arvot 1-6
 
 aloittaja:
--voidaan arpoa pelaajien kesken nopalla, suurin silmäluku voittaa.
+-voidaan arpoa pelaajien kesken nopalla, suurin silmaluku voittaa.
 
 pelikehys:
--kysyttävä kuinka monta pelaajaa 1..4 on pelaamassa (ja kuka pelaa milläkin värillä)
+-kysyttavä kuinka monta pelaajaa 1..4 on pelaamassa (ja kuka pelaa millakin varilla)
 
 pelikierros:
--huolehtii, että jokainen 1..4 pelaajasta heittää noppaa, ja etenee pelinappulalla (jos mahdollista).
+-huolehtii, etta jokainen 1..4 pelaajasta heittaa noppaa, ja etenee pelinappulalla (jos mahdollista).

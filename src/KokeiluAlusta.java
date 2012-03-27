@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class KokeiluAlusta {
 
     /**
-     * Pääohjelma, voidaan lukea säännöt, pelata tai lopettaa ohjelma.
+     * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
      * @param args 
      */
     static Scanner lukija = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class KokeiluAlusta {
         }
     }
     /**
-     * Automaattisesti lukee saannot, pelaa pelin ja lopettaa ohjelman.
+     * Automaattisesti lukee saannot, aloittaa pelin ja lopettaa ohjelman.
      */
     private static void automatisoiSyote() {
         String syote = "1\n" + "2\n" + "3\n";

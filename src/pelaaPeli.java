@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class pelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
-    int i;
+    int kierros;
     String nappulanVari = "";
 
     /**
@@ -16,7 +16,7 @@ public class pelaaPeli {
      */
     public pelaaPeli() {
         System.out.println("Tervetuloa pelaamaan kimblea!");
-        i = 1;
+        kierros = 1;
     }
 
     /**
@@ -38,7 +38,7 @@ public class pelaaPeli {
 
         while (true) {
 
-            System.out.println("\nKierros: " + i);
+            System.out.println("\nKierros: " + kierros);
             if (mikko.olioPelaaKierroksensa() == true) {
                 System.out.println("Onnittelut voitit!");
                 break;
@@ -56,7 +56,7 @@ public class pelaaPeli {
                 System.out.println("tekoAlyGold on voittanut!");
                 break;
             } else {
-                i++;
+                kierros++;
             }
         }
     }

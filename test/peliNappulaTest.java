@@ -59,6 +59,7 @@ public class peliNappulaTest {
     @Test
     public void lisaaPelinappulaTesti() {
         silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
+        assertTrue(silinteri.tarkistaNappula("Testi-teppo", "donerkebap"));
     }
 
     @Test
@@ -78,12 +79,17 @@ public class peliNappulaTest {
         silinteri.lisaaPelinappula("pallo", "sinertava");
         assertTrue(silinteri.getNappuloidenLkm() == 1);
     }
+    @Test
+    public void nappulanLisaysTesti() {
+        silinteri.lisaaPelinappula("pallo", "sinertava");
+        silinteri.lisaaPelinappula("kuutio", "turkoosi");
+        assertTrue(silinteri.getNappuloidenLkm() == 2);
+    }
 
     @Test
     public void nappulanTarkistusTesti() {
         silinteri.lisaaPelinappula("pallo", "keltainen");
-        boolean variMuoto = silinteri.tarkistaNappula("pallo", "keltainen");
-        assertEquals(variMuoto, true);
+        assertEquals(silinteri.tarkistaNappula("pallo", "keltainen"), true);
     }
 
     @Test
