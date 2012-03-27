@@ -7,7 +7,7 @@ public class saannot {
 
     /**
      * Kimblen pelaamisen saannot lyhyesti.
-     * @return 
+     * @return String
      */
     public String tulostaSaannot() {
         String teksti = "Kimblen saannot: "

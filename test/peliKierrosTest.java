@@ -32,7 +32,7 @@ public class peliKierrosTest {
 
     @Before
     public void setUp() {
-        eka.alustaPelaaja("punainen",1);
+        eka.alustaPelaaja("punainen", 1);
         vari = eka.nappulanVari;
 
     }
@@ -57,4 +57,30 @@ public class peliKierrosTest {
         int paikka = eka.pylpyra.getNappulanSijainti(0);
         assertTrue(paikka == 15);
     }
+
+    @Test
+    public void ensimmaisellaKierroksellaPeliEiLopuTesti() {
+        eka.olioPelaaKierroksensa();
+        assertFalse(eka.olioPelaaKierroksensa());
+    }
+
+    @Test
+    public void seuraavaNappulaTesti() {
+        eka.pylpyra.setNappulanSijainti(0, 29);
+        eka.olioPelaaKierroksensa();
+        assertTrue(eka.nappulaLkm>1);
+    }
+    /*public boolean olioPelaaKierroksensa() {
+    pelaajaHeittaaNoppaaKerran();
+    if (tarkistaMaaliinPaasy() == true && nappulaLkm <= 4) {
+    if (nappulaLkm == 4) {
+    return true;
+    } else {
+    nappulaLkm++;
+    alustaPelaaja(this.nappulanVari, nappulaLkm);
+    return false;
+    }
+    }
+    return false;
+    }*/
 }

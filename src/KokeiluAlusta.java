@@ -19,6 +19,7 @@ public class KokeiluAlusta {
      * @param args
      */
     public static void main(String[] args) {
+        automatisoiSyote();
         pelaaPeli kimble = new pelaaPeli();
 
         while (true) {
@@ -30,16 +31,18 @@ public class KokeiluAlusta {
                 System.out.println(lex.tulostaSaannot());
             } else if (vastaus == 2) {
                 kimble.pelaus();
-                automatisoiSyote();
             } else {
                 System.out.println("Et halua enaan pelata, siis suljen ohjelman.");
                 break;
             }
         }
     }
-     private static void automatisoiSyote() {
-        String syote = "viininpunainen";
-        
-        lukija = new Scanner( new ByteArrayInputStream(syote.getBytes()) );
+    /**
+     * Automaattisesti lukee saannot, pelaa pelin ja lopettaa ohjelman.
+     */
+    private static void automatisoiSyote() {
+        String syote = "1\n" + "2\n" + "3\n";
+
+        lukija = new Scanner(new ByteArrayInputStream(syote.getBytes()));
     }
 }
