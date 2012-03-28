@@ -5,7 +5,7 @@ import java.util.Scanner;
  * 
  * @author mikakekalainen
  */
-public class peliNappula {
+public class PeliNappula {
     static Scanner lukija = new Scanner(System.in);
 
     private int[] liike = {0, 0, 0, 0};
@@ -17,7 +17,7 @@ public class peliNappula {
      * Luokan konstruktori
      * @param vari pelinappulan vari
      */
-    public peliNappula(String vari) {
+    public PeliNappula(String vari) {
         pelaajanNappulanVari = vari;
     }
     /**

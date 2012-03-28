@@ -14,12 +14,12 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class peliKierrosTest {
+public class PeliKierrosTest {
 
     private String vari;
-    private peliKierros eka = new peliKierros();
+    private PeliKierros eka = new PeliKierros();
 
-    public peliKierrosTest() {
+    public PeliKierrosTest() {
     }
 
     @BeforeClass

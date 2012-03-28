@@ -3,7 +3,7 @@
  * 
  * @author mikakekalainen
  */
-public class peliKierros {
+public class PeliKierros {
 
     int nopanSilmaluku = 0;
     peliNappula pylpyra = new peliNappula("");
@@ -28,7 +28,7 @@ public class peliKierros {
      * pelaajan nappula saa mahdollisesti uuden sijainnin riippuen pelitilanteesta  
      */
     public void pelaajaHeittaaNoppaaKerran() {
-        nopanHeitto heitto = new nopanHeitto();
+        NopanHeitto heitto = new NopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
         if (pylpyra.getNappulanSijainti(m) == 0 && nopanSilmaluku < 6) {
         } else if (pylpyra.getNappulanSijainti(m) == 0 && nopanSilmaluku == 6) {

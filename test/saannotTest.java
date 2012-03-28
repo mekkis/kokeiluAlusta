@@ -14,9 +14,9 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class saannotTest {
+public class SaannotTest {
     
-    public saannotTest() {
+    public SaannotTest() {
     }
 
     @BeforeClass
@@ -40,7 +40,7 @@ public class saannotTest {
     
     @Test
     public void tulostaSaannotTesti() {
-        saannot laki = new saannot();
+        Saannot laki = new Saannot();
         String teksti=laki.tulostaSaannot();
         assertFalse(teksti.isEmpty());
     }

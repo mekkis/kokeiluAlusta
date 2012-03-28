@@ -5,7 +5,7 @@ import java.util.Scanner;
  * 
  * @author mikakekalainen
  */
-public class pelaaPeli {
+public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
     int kierros;
@@ -14,7 +14,7 @@ public class pelaaPeli {
     /**
      * kierrosten alustus
      */
-    public pelaaPeli() {
+    public PelaaPeli() {
         System.out.println("Tervetuloa pelaamaan kimblea!");
         kierros = 1;
     }

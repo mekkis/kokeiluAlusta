@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class peliNappulaTest {
+public class PeliNappulaTest {
 
-    peliNappula silinteri = new peliNappula("red");
+    PeliNappula silinteri = new PeliNappula("red");
 
-    public peliNappulaTest() {
+    public PeliNappulaTest() {
     }
 
     @BeforeClass
@@ -44,15 +44,15 @@ public class peliNappulaTest {
 
     /*@Test
     public void samatOliotBooleanTesti() { //EI TOIMI
-        peliNappula A = new peliNappula("red");
-        peliNappula B = new peliNappula("red");
+        PeliNappula A = new PeliNappula("red");
+        PeliNappula B = new PeliNappula("red");
         assertTrue(A.equals(B));
     }
 
     @Test
     public void samatOliotEqualsTesti() {   //EI TOIMI
-        peliNappula AA = new peliNappula("red");
-        peliNappula BB = new peliNappula("red");
+        PeliNappula AA = new PeliNappula("red");
+        PeliNappula BB = new PeliNappula("red");
         assertEquals(AA, BB);
     }*/
 

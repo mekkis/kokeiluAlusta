@@ -3,10 +3,10 @@
  * 
  * @author mikakekalainen
  */
-public class saannot {
+public class Saannot {
 
     /**
-     * Kimblen pelaamisen saannot lyhyesti.
+     * Kimblen pelaamisen Saannot lyhyesti.
      * @return String
      */
     public String tulostaSaannot() {
