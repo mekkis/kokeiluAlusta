@@ -25,10 +25,10 @@ public class PelaaPeli {
      */
     public void pelaus() {
         
-        peliKierros mikko = new peliKierros();
-        peliKierros tekoAlyLila = new peliKierros();
-        peliKierros tekoAlyPurppura = new peliKierros();
-        peliKierros tekoAlyGold = new peliKierros();
+        PeliKierros mikko = new PeliKierros();
+        PeliKierros tekoAlyLila = new PeliKierros();
+        PeliKierros tekoAlyPurppura = new PeliKierros();
+        PeliKierros tekoAlyGold = new PeliKierros();
         
         mikko.pylpyra.setPelinappulanVari();
         mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari(), 1);

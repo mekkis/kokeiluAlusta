@@ -6,7 +6,7 @@
 public class PeliKierros {
 
     int nopanSilmaluku = 0;
-    peliNappula pylpyra = new peliNappula("");
+    PeliNappula pylpyra = new PeliNappula("");
     String nappulanVari = "";
     int m = 0;
     int nappulaLkm = 1;
@@ -17,7 +17,7 @@ public class PeliKierros {
      * @param nappulanNumero  
      */
     public void alustaPelaaja(String pelaajanVari, int nappulanNumero) {
-        pylpyra = new peliNappula(pelaajanVari);
+        pylpyra = new PeliNappula(pelaajanVari);
         pylpyra.setNappulanSijainti(0, 0);
         this.nappulanVari = pelaajanVari;
         nappulaLkm = nappulanNumero;
