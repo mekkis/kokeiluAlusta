@@ -5,7 +5,7 @@ import java.util.Scanner;
  * 
  * @author mikakekalainen
  */
-public class PelaaPeli {
+public class pelaaPeliRomu {
 
     static Scanner lukija = new Scanner(System.in);
     int kierros;
@@ -15,7 +15,7 @@ public class PelaaPeli {
     /**
      * kierrosten alustus
      */
-    public PelaaPeli() {
+    public pelaaPeliRomu() {
         System.out.println("Tervetuloa pelaamaan kimblea!");
         kierros = 1;
         System.out.println("");
@@ -27,10 +27,10 @@ public class PelaaPeli {
      */
     public void pelaus() {
         
-        PeliKierros mikko = new PeliKierros();
-        PeliKierros tekoAlyLila = new PeliKierros();
-        PeliKierros tekoAlyPurppura = new PeliKierros();
-        PeliKierros tekoAlyGold = new PeliKierros();
+        peliKierrosRomu¨ mikko = new peliKierrosRomu¨();
+        peliKierrosRomu¨ tekoAlyLila = new peliKierrosRomu¨();
+        peliKierrosRomu¨ tekoAlyPurppura = new peliKierrosRomu¨();
+        peliKierrosRomu¨ tekoAlyGold = new peliKierrosRomu¨();
         
         mikko.pylpyra.setPelinappulanVari();
         mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari(), 1);

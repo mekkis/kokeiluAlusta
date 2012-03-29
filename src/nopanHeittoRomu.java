@@ -5,8 +5,7 @@ import java.util.Random;
  * 
  * @author mikakekalainen
  */
-public class NopanHeitto {
-
+public class nopanHeittoRomu {
     /**
      * Heittää noppaa
      * @return kokonaisluku välillä 1..6

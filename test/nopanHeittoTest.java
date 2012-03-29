@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class NopanHeittoTest {
+public class nopanHeittoTest {
 
     private int luku;
 
-    public NopanHeittoTest() {
+    public nopanHeittoTest() {
     }
 
     @BeforeClass
@@ -31,7 +31,7 @@ public class NopanHeittoTest {
 
     @Before
     public void setUp() {
-        NopanHeitto noppa = new NopanHeitto();
+        nopanHeittoRomu noppa = new nopanHeittoRomu();
         luku = noppa.getNopanSilmaluku();
     }
 

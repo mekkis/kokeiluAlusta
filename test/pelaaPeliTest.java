@@ -14,11 +14,11 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class PelaaPeliTest {
+public class pelaaPeliTest {
 
     PelaaPeli kekkonen = new PelaaPeli();
 
-    public PelaaPeliTest() {
+    public pelaaPeliTest() {
     }
 
     @BeforeClass

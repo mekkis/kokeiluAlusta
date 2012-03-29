@@ -6,11 +6,13 @@ import java.util.Scanner;
  * 
  * @author mikakekalainen
  */
-public class KokeiluAlusta {
+public class kokeiluAlustaRomu {
 
     /**
-     * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
+     * Paaohjelma, voidaan lukea Saannot, pelata tai lopettaa ohjelma.
      * @param args 
+     * 
+     * 
      */
     static Scanner lukija = new Scanner(System.in);
 
@@ -20,14 +22,14 @@ public class KokeiluAlusta {
      */
     public static void main(String[] args) {
         automatisoiSyote();
-        PelaaPeli kimble = new PelaaPeli();
+        pelaaPeliRomu kimble = new pelaaPeliRomu();
 
         while (true) {
             System.out.println("\nValitse toiminto:");
             System.out.println("1.Lue saannot  2.Aloita pelaaminen  3.Lopeta");
             int vastaus = Integer.parseInt(lukija.nextLine());
             if (vastaus == 1) {
-                Saannot lex = new Saannot();
+                saannotRomu lex = new Saannot();
                 System.out.println(lex.tulostaSaannot());
             } else if (vastaus == 2) {
                 kimble.pelaus();
@@ -38,7 +40,7 @@ public class KokeiluAlusta {
         }
     }
     /**
-     * Automaattisesti lukee saannot, aloittaa pelin ja lopettaa ohjelman.
+     * Automaattisesti lukee Saannot, aloittaa pelin ja lopettaa ohjelman.
      */
     private static void automatisoiSyote() {
         String syote = "1\n" + "2\n" + "3\n";
