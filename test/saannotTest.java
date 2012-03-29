@@ -40,7 +40,7 @@ public class saannotTest {
     
     @Test
     public void tulostaSaannotTesti() {
-        saannotRomu laki = new saannotRomu();
+        Saannot laki = new Saannot();
         String teksti=laki.tulostaSaannot();
         assertFalse(teksti.isEmpty());
     }

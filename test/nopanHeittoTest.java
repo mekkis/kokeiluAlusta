@@ -31,7 +31,7 @@ public class nopanHeittoTest {
 
     @Before
     public void setUp() {
-        nopanHeittoRomu noppa = new nopanHeittoRomu();
+        NopanHeitto noppa = new NopanHeitto();
         luku = noppa.getNopanSilmaluku();
     }
 
