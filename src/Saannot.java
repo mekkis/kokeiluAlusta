@@ -6,7 +6,7 @@
 public class Saannot {
 
     /**
-     * Kimblen pelaamisen Saannot lyhyesti.
+     * Kimblen pelaamisen saannot lyhyesti.
      * @return String
      */
     public String tulostaSaannot() {
