@@ -11,6 +11,8 @@ public class KokeiluAlusta {
     /**
      * Paaohjelma, voidaan lukea Saannot, pelata tai lopettaa ohjelma.
      * @param args 
+     * 
+     * 
      */
     static Scanner lukija = new Scanner(System.in);
 

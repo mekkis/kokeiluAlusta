@@ -10,6 +10,7 @@ public class PelaaPeli {
     static Scanner lukija = new Scanner(System.in);
     int kierros;
     String nappulanVari = "";
+    
 
     /**
      * kierrosten alustus
@@ -17,6 +18,7 @@ public class PelaaPeli {
     public PelaaPeli() {
         System.out.println("Tervetuloa pelaamaan kimblea!");
         kierros = 1;
+        System.out.println("");
     }
 
     /**
