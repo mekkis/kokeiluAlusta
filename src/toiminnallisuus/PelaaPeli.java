@@ -32,11 +32,11 @@ public class PelaaPeli {
         PeliKierros tekoAlyPurppura = new PeliKierros();
         PeliKierros tekoAlyGold = new PeliKierros();
         
-        mikko.pylpyra.setPelinappulanVari();
-        mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari(), 1);
-        tekoAlyLila.alustaPelaaja("lila", 1);
-        tekoAlyPurppura.alustaPelaaja("purppura", 1);
-        tekoAlyGold.alustaPelaaja("gold", 1);
+        mikko.pylpyra1.setPelinappulanVari();
+        mikko.alustaPelaaja(mikko.pylpyra1.getPeliNappulanVari());
+        tekoAlyLila.alustaPelaaja("lila");
+        tekoAlyPurppura.alustaPelaaja("purppura");
+        tekoAlyGold.alustaPelaaja("gold");
 
         while (true) {
 

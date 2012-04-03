@@ -48,18 +48,26 @@ public class PeliNappula {
     }
 
     /**
-     * siirretään nappulaa
+     * liikutetaan nappulaa, kunnes ollan maalissa
      * @param siirto integer 
      */
     public void liikutaNappulaa(int siirto) {
         for (int j = 0; j < 4; j++) {
-            if (liike[j] + siirto > 31) { //liikutetaan nappulaa, kunnes ollan maalissa
+            if (liike[j] + siirto > 31) { 
                 liike[j] += 0;
             } else {
                 liike[j] += siirto;
             }
         }
     }
+    public void liikutaTiettyaNappulaa(int siirto, int nappulanNumero) {
+            if (liike[nappulanNumero] + siirto > 31) { 
+                liike[nappulanNumero] += 0;
+            } else {
+                liike[nappulanNumero] += siirto;
+            }
+        }
+    
 
     /**
      * 

@@ -21,7 +21,7 @@ public class KokeiluAlusta {
      * @param args
      */
     public static void main(String[] args) {
-        automatisoiSyote();
+        //automatisoiSyote();
         toiminnallisuus.PelaaPeli kimble = new toiminnallisuus.PelaaPeli();
 
         while (true) {
