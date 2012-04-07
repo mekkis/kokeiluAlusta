@@ -64,7 +64,7 @@ public class PeliKierros {
      * Jos pelaaja saa nopalla 6 ja pelaajalla on jo yksi pelinappula kiertamassa, 
      * niin tiedustellaan halukkuus toiseen pelinappulaan kiertamaan pelilaudelle.
      */
-    public void useitaNappuloitaPeliin() {
+    public void useitaNappuloitaPeliin() { // ei tarpeen, jos vain 1 nappula kerralla pelissä!!
         System.out.println("Haluatko uuden nappulan aktiiviseksi? k/e");
         String vastausUuteenNappulaan = lukija.nextLine();
         if (vastausUuteenNappulaan.equals("e")) {
