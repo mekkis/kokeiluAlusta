@@ -9,7 +9,13 @@ import java.util.Scanner;
 public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
+    /**
+     * 
+     */
     public int kierros;
+    /**
+     * 
+     */
     public String nappulanVari = "";
     PeliKierros mikko = new PeliKierros();
     PeliKierros tekoAlyLila = new PeliKierros();
@@ -24,9 +30,12 @@ public class PelaaPeli {
         kierros = 1;
     }
 
+    /**
+     * 
+     */
     public void asetaPelaajatPeliavarten() {
-        mikko.pylpyra1.setPelinappulanVari();
-        mikko.alustaPelaaja(mikko.pylpyra1.getPeliNappulanVari());
+        mikko.pylpyra.setPelinappulanVari();
+        mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari());
         tekoAlyLila.alustaPelaaja("lila");
         tekoAlyPurppura.alustaPelaaja("purppura");
         tekoAlyGold.alustaPelaaja("gold");

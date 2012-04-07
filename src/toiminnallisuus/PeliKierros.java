@@ -10,8 +10,17 @@ public class PeliKierros {
 
     static Scanner lukija = new Scanner(System.in);
     int nopanSilmaluku = 0;
-    public PeliNappula pylpyra1 = new PeliNappula("");
+    /**
+     * 
+     */
+    public PeliNappula pylpyra = new PeliNappula("");
+    /**
+     * 
+     */
     public String nappulanVari = "";
+    /**
+     * 
+     */
     public int nappulanNro = 0;
     int s;
 
@@ -20,7 +29,7 @@ public class PeliKierros {
      * @param pelaajanVari minkä värinen pelaaja haluaa olla
      */
     public void alustaPelaaja(String pelaajanVari) {
-        pylpyra1 = new PeliNappula(pelaajanVari);
+        pylpyra = new PeliNappula(pelaajanVari);
         //pylpyra1.setNappulanSijainti(0, 0);
         this.nappulanVari = pelaajanVari;
     }
@@ -32,32 +41,36 @@ public class PeliKierros {
     public void pelaajaHeittaaNoppaaKerran() {
         NopanHeitto heitto = new NopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
-        if ((pylpyra1.getNappulanSijainti(nappulanNro) == 0 || pylpyra1.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku < 6) {
-        } else if ((pylpyra1.getNappulanSijainti(nappulanNro) == 0 || pylpyra1.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku == 6) {
+        if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku < 6) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku == 6) {
             uusiNappulaAloitusRuutuun();
             pelaajaHeittaaNoppaaKerran();
-        } else if ((pylpyra1.getNappulanSijainti(nappulanNro) > 0 || pylpyra1.getNappulanSijainti(nappulanNro) < 27) && nopanSilmaluku <= 6) {
-            siirraNappulaaNopanLukemanVerran();
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 27) && nopanSilmaluku <= 6) {
+            if (pelinappulaSamassaRuudussa() == false) {
+                siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
+            }
             if (nopanSilmaluku == 6) {
                 pelaajaHeittaaNoppaaKerran();
             }
-        }/* else if ((pylpyra1.getNappulanSijainti(m) > 0 || pylpyra1.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
+        }/* else if ((pylpyra.getNappulanSijainti(m) > 0 || pylpyra.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
         useitaNappuloitaPeliin();
         }*/
     }
 
     /**
      * siirretaan pelinappulaa nopan silmaluvun verran eteenpain
+     * @param monesko 
+     * @param paljonko 
      */
-    public void siirraNappulaaNopanLukemanVerran() {
-        pylpyra1.liikutaTiettyaNappulaa(nappulanNro, nopanSilmaluku);
+    public void siirraNappulaaNopanLukemanVerran(int monesko, int paljonko) {
+        pylpyra.liikutaTiettyaNappulaa(monesko, paljonko);
     }
 
     /**
      * asettaa uuden pelinappulan aloitusruutuun
      */
     public void uusiNappulaAloitusRuutuun() {
-        pylpyra1.liikutaTiettyaNappulaa(nappulanNro, 1);
+        pylpyra.liikutaTiettyaNappulaa(nappulanNro, 1);
     }
 
     /**
@@ -68,27 +81,44 @@ public class PeliKierros {
         System.out.println("Haluatko uuden nappulan aktiiviseksi? k/e");
         String vastausUuteenNappulaan = lukija.nextLine();
         if (vastausUuteenNappulaan.equals("e")) {
-            siirraNappulaaNopanLukemanVerran();
+            siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
         } else if (vastausUuteenNappulaan.equals("k")) {
             uusiNappulaAloitusRuutuun();
         }
     }
 
-    /*public boolean pelinappulaSamassaRuudussa() {
-    for (s = 0; s < 4; s++) {
-    if (pylpyra1.getNappulanSijainti(nappulanNro) == pylpyra1.getNappulanSijainti(nappulanNro + s)) {
-    return true;
+    /**
+     * 
+     * @return
+     */
+    public boolean pelinappulaSamassaRuudussa() {
+        if (nappulanNro == 1) {
+            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)) {
+                return true;
+            }
+        } else if (nappulanNro == 2) {
+            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)
+                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 2)) {
+                return true;
+            }
+        } else if (nappulanNro == 3) {
+            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)
+                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 2)
+                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 3)) {
+                return true;
+            }
+        }
+        return false;
+
     }
-    }
-    return false;
-    }*/
+
     /**
      * tulostetaan pelaajan pelinappuloiden sijainti
      */
     public void nappuloidenTilanteenTulostus() {
         System.out.print(this.nappulanVari + " nappuloiden sijainti: ");
         for (s = 0; s < 4; s++) {
-            int[] lista = pylpyra1.getNappuloidenSijainnit();
+            int[] lista = pylpyra.getNappuloidenSijainnit();
             System.out.print(lista[s] + " ");
         }
         System.out.println("");
@@ -100,11 +130,11 @@ public class PeliKierros {
      */
     public boolean tarkistaMaaliinPaasy() {
         int numerointiNappuloille = nappulanNro + 1;
-        if (pylpyra1.getNappulanSijainti(nappulanNro) > 27 && pylpyra1.getNappulanSijainti(nappulanNro) < 32) {
-            /*   if (m > 0 && pylpyra1.getNappulanSijainti(m) != pylpyra1.getNappulanSijainti(m - 1)) {
+        if (pylpyra.getNappulanSijainti(nappulanNro) > 27 && pylpyra.getNappulanSijainti(nappulanNro) < 32) {
+            /*   if (m > 0 && pylpyra.getNappulanSijainti(m) != pylpyra.getNappulanSijainti(m - 1)) {
             System.out.println("Pelaaja " + this.nappulanVari + " on paassyt maaliin");
             return true;
-            } else if (m > 0 && pylpyra1.getNappulanSijainti(m) == pylpyra1.getNappulanSijainti(m - 1)) {
+            } else if (m > 0 && pylpyra.getNappulanSijainti(m) == pylpyra.getNappulanSijainti(m - 1)) {
             return false;
             } else {*/
             System.out.println("Pelaajan " + this.nappulanVari + " nappula" + numerointiNappuloille + " on paassyt maaliin");

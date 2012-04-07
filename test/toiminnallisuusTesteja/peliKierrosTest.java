@@ -55,8 +55,8 @@ public class peliKierrosTest {
 
     @Test
     public void pelaajanNappulanSijaintiTesti() {
-        eka.pylpyra1.setNappulanSijainti(0, 15);
-        int paikka = eka.pylpyra1.getNappulanSijainti(0);
+        eka.pylpyra.setNappulanSijainti(0, 15);
+        int paikka = eka.pylpyra.getNappulanSijainti(0);
         assertTrue(paikka == 15);
     }
 
@@ -68,14 +68,14 @@ public class peliKierrosTest {
 
     @Test
     public void seuraavaNappulaTesti() {
-        eka.pylpyra1.setNappulanSijainti(0, 29);
+        eka.pylpyra.setNappulanSijainti(0, 29);
         eka.olioPelaaKierroksensa();
         assertTrue(eka.nappulanNro > 0);
     }
 
     @Test
     public void eiViidettaNappulaaTesti() {
-        eka.pylpyra1.setNappulanSijainti(3, 29);
+        eka.pylpyra.setNappulanSijainti(3, 29);
         assertFalse(eka.olioPelaaKierroksensa());
     }
 }
