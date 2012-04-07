@@ -70,7 +70,7 @@ public class peliKierrosTest {
     public void seuraavaNappulaTesti() {
         eka.pylpyra1.setNappulanSijainti(0, 29);
         eka.olioPelaaKierroksensa();
-        assertTrue(eka.nappulanNro > 1);
+        assertTrue(eka.nappulanNro > 0);
     }
 
     @Test
