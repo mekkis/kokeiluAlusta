@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
-    int kierros;
-    String nappulanVari = "";
+    public int kierros;
+    public String nappulanVari = "";
 
     /**
      * kierrosten alustus

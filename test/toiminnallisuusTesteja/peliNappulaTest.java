@@ -1,3 +1,5 @@
+package toiminnallisuusTesteja;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -16,7 +18,7 @@ import static org.junit.Assert.*;
  */
 public class peliNappulaTest {
 
-    PeliNappula silinteri = new PeliNappula("red");
+    toiminnallisuus.PeliNappula silinteri = new toiminnallisuus.PeliNappula("red");
 
     public peliNappulaTest() {
     }

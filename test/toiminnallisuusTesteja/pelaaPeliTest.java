@@ -1,3 +1,5 @@
+package toiminnallisuusTesteja;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -16,7 +18,7 @@ import static org.junit.Assert.*;
  */
 public class pelaaPeliTest {
 
-    PelaaPeli kekkonen = new PelaaPeli();
+    toiminnallisuus.PelaaPeli kekkonen = new toiminnallisuus.PelaaPeli();
 
     public pelaaPeliTest() {
     }

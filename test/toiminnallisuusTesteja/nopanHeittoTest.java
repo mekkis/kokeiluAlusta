@@ -1,3 +1,5 @@
+package toiminnallisuusTesteja;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -14,9 +16,11 @@ import static org.junit.Assert.*;
  *
  * @author mikakekalainen
  */
-public class saannotTest {
-    
-    public saannotTest() {
+public class nopanHeittoTest {
+
+    private int luku;
+
+    public nopanHeittoTest() {
     }
 
     @BeforeClass
@@ -26,22 +30,29 @@ public class saannotTest {
     @AfterClass
     public static void tearDownClass() throws Exception {
     }
-    
+
     @Before
     public void setUp() {
+        toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
+        luku = noppa.getNopanSilmaluku();
     }
-    
+
     @After
     public void tearDown() {
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
-    //   
-    
+    //
+    // @Test
+    // public void hello() {}
+
     @Test
-    public void tulostaSaannotTesti() {
-        Saannot laki = new Saannot();
-        String teksti=laki.tulostaSaannot();
-        assertFalse(teksti.isEmpty());
+    public void nopanlukuAlleSeitseman() {
+        assertTrue(luku < 7);
+    }
+
+    @Test
+    public void nopanlukuPositiivinen() { 
+        assertTrue(luku > 0);
     }
 }

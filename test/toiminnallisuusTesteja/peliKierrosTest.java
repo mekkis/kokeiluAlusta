@@ -1,3 +1,5 @@
+package toiminnallisuusTesteja;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -17,7 +19,7 @@ import static org.junit.Assert.*;
 public class peliKierrosTest {
 
     private String vari;
-    private PeliKierros eka = new PeliKierros();
+    private toiminnallisuus.PeliKierros eka = new toiminnallisuus.PeliKierros();
 
     public peliKierrosTest() {
     }
@@ -32,7 +34,7 @@ public class peliKierrosTest {
 
     @Before
     public void setUp() {
-        eka.alustaPelaaja("punainen", 1);
+        eka.alustaPelaaja("punainen");
         vari = eka.nappulanVari;
 
     }
@@ -53,8 +55,8 @@ public class peliKierrosTest {
 
     @Test
     public void pelaajanNappulanSijaintiTesti() {
-        eka.pylpyra.setNappulanSijainti(0, 15);
-        int paikka = eka.pylpyra.getNappulanSijainti(0);
+        eka.pylpyra1.setNappulanSijainti(0, 15);
+        int paikka = eka.pylpyra1.getNappulanSijainti(0);
         assertTrue(paikka == 15);
     }
 
@@ -66,14 +68,14 @@ public class peliKierrosTest {
 
     @Test
     public void seuraavaNappulaTesti() {
-        eka.pylpyra.setNappulanSijainti(0, 29);
+        eka.pylpyra1.setNappulanSijainti(0, 29);
         eka.olioPelaaKierroksensa();
-        assertTrue(eka.nappulaLkm > 1);
+        assertTrue(eka.nappulanNro > 1);
     }
 
     @Test
     public void eiViidettaNappulaaTesti() {
-        eka.pylpyra.setNappulanSijainti(3, 29);
+        eka.pylpyra1.setNappulanSijainti(3, 29);
         assertFalse(eka.olioPelaaKierroksensa());
     }
 }
