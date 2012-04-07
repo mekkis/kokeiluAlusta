@@ -4,7 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
 /**
- * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
+ * 
  * @author mikakekalainen
  */
 public class KokeiluAlusta {
@@ -12,6 +12,10 @@ public class KokeiluAlusta {
     static Scanner lukija = new Scanner(System.in);
 
    
+    /**
+     * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
+     * @param args
+     */
     public static void main(String[] args) {
         automatisoiSyote();
         toiminnallisuus.PelaaPeli kimble = new toiminnallisuus.PelaaPeli();
