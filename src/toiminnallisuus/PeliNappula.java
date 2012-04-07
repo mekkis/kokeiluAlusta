@@ -1,6 +1,5 @@
 package toiminnallisuus;
 
-
 import java.util.Scanner;
 
 /**
@@ -8,8 +7,8 @@ import java.util.Scanner;
  * @author mikakekalainen
  */
 public class PeliNappula {
-    static Scanner lukija = new Scanner(System.in);
 
+    static Scanner lukija = new Scanner(System.in);
     private int[] liike = {0, 0, 0, 0};
     private String pelaajanNappulanVari = "punainen";
     private int nappuloita = 0;
@@ -22,6 +21,7 @@ public class PeliNappula {
     public PeliNappula(String vari) {
         pelaajanNappulanVari = vari;
     }
+
     /**
      * Setteri asettaa pelinappulalle jonkin vari (String) 
      */
@@ -29,13 +29,15 @@ public class PeliNappula {
         System.out.println("Valitse pelinappulan vari: ");
         pelaajanNappulanVari = lukija.nextLine();
     }
+
     /**
      * Getteri hakee pelinappulan varin
      * @return String
      */
-    public String getPeliNappulanVari(){
+    public String getPeliNappulanVari() {
         return pelaajanNappulanVari;
     }
+
     /**
      * lisataan pelinappula
      * @param muoto nappulan muoto
@@ -53,21 +55,26 @@ public class PeliNappula {
      */
     public void liikutaNappulaa(int siirto) {
         for (int j = 0; j < 4; j++) {
-            if (liike[j] + siirto > 31) { 
+            if (liike[j] + siirto > 31) {
                 liike[j] += 0;
             } else {
                 liike[j] += siirto;
             }
         }
     }
-    public void liikutaTiettyaNappulaa(int siirto, int nappulanNumero) {
-            if (liike[nappulanNumero] + siirto > 31) { 
-                liike[nappulanNumero] += 0;
-            } else {
-                liike[nappulanNumero] += siirto;
-            }
+
+    /**
+     * 
+     * @param siirto
+     * @param nappulanNumero
+     */
+    public void liikutaTiettyaNappulaa(int nappulanNumero, int siirto) {
+        if (liike[nappulanNumero] + siirto > 31) {
+            liike[nappulanNumero] += 0;
+        } else {
+            liike[nappulanNumero] += siirto;
         }
-    
+    }
 
     /**
      * 
@@ -76,6 +83,13 @@ public class PeliNappula {
      */
     public int getNappulanSijainti(int k) {
         return liike[k];
+    }
+    /**
+     * 
+     * @return
+     */
+    public int[] getNappuloidenSijainnit() {
+        return liike;
     }
 
     /**
