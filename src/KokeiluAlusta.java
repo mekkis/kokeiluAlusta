@@ -8,15 +8,12 @@ import java.util.Scanner;
  */
 public class KokeiluAlusta {
 
+    static Scanner lukija = new Scanner(System.in);
+
+
     /**
      * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
      * @param args 
-     */
-    static Scanner lukija = new Scanner(System.in);
-
-    /**
-     * 
-     * @param args
      */
     public static void main(String[] args) {
         automatisoiSyote();

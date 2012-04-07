@@ -1,25 +1,17 @@
 package peliAlusta;
 
-
 import java.io.ByteArrayInputStream;
 import java.util.Scanner;
 
 /**
- * 
+ * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
  * @author mikakekalainen
  */
 public class KokeiluAlusta {
 
-    /**
-     * Paaohjelma, voidaan lukea saannot, pelata tai lopettaa ohjelma.
-     * @param args 
-     */
     static Scanner lukija = new Scanner(System.in);
 
-    /**
-     * 
-     * @param args
-     */
+   
     public static void main(String[] args) {
         automatisoiSyote();
         toiminnallisuus.PelaaPeli kimble = new toiminnallisuus.PelaaPeli();
@@ -39,6 +31,7 @@ public class KokeiluAlusta {
             }
         }
     }
+
     /**
      * Automaattisesti lukee saannot, aloittaa pelin ja lopettaa ohjelman.
      */

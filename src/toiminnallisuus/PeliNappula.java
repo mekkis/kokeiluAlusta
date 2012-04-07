@@ -85,8 +85,8 @@ public class PeliNappula {
         return liike[k];
     }
     /**
-     * 
-     * @return
+     * getteri nappuloiden sijaintitaulukosta
+     * @return int[]
      */
     public int[] getNappuloidenSijainnit() {
         return liike;
