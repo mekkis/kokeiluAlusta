@@ -30,6 +30,10 @@ public class PeliNappula {
         pelaajanNappulanVari = lukija.nextLine();
     }
 
+    public void setPelinappulanVari(String vari) {
+        pelaajanNappulanVari = vari;
+    }
+
     /**
      * Getteri hakee pelinappulan varin
      * @return String
@@ -84,6 +88,7 @@ public class PeliNappula {
     public int getNappulanSijainti(int k) {
         return liike[k];
     }
+
     /**
      * getteri nappuloiden sijaintitaulukosta
      * @return int[]

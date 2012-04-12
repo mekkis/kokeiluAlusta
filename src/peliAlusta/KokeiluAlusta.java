@@ -17,9 +17,9 @@ public class KokeiluAlusta {
      * @param args
      */
     public static void main(String[] args) {
-        automatisoiSyote();
+        //automatisoiSyote();
         toiminnallisuus.PelaaPeli kimble = new toiminnallisuus.PelaaPeli();
-
+        
         while (true) {
             System.out.println("\nValitse toiminto:");
             System.out.println("1.Lue saannot  2.Aloita pelaaminen  3.Lopeta");

@@ -18,9 +18,9 @@ public class PelaaPeli {
      */
     public String nappulanVari = "";
     PeliKierros mikko = new PeliKierros();
-    PeliKierros tekoAlyLila = new PeliKierros();
-    PeliKierros tekoAlyPurppura = new PeliKierros();
-    PeliKierros tekoAlyGold = new PeliKierros();
+    PeliKierros tekoAlyVihrea = new PeliKierros();
+    PeliKierros tekoAlyKeltainen = new PeliKierros();
+    PeliKierros tekoAlySininen = new PeliKierros();
 
     /**
      * kierrosten alustus
@@ -34,11 +34,12 @@ public class PelaaPeli {
      * 
      */
     public void asetaPelaajatPeliavarten() {
-        mikko.pylpyra.setPelinappulanVari();
+        //mikko.pylpyra.setPelinappulanVari();
+        mikko.pylpyra.setPelinappulanVari("punainen");
         mikko.alustaPelaaja(mikko.pylpyra.getPeliNappulanVari());
-        tekoAlyLila.alustaPelaaja("lila");
-        tekoAlyPurppura.alustaPelaaja("purppura");
-        tekoAlyGold.alustaPelaaja("gold");
+        tekoAlyVihrea.alustaPelaaja("vihrea");
+        tekoAlyKeltainen.alustaPelaaja("keltainen");
+        tekoAlySininen.alustaPelaaja("sininen");
     }
 
     /**
@@ -53,15 +54,15 @@ public class PelaaPeli {
                 System.out.println("Onnittelut voitit!");
                 break;
             }
-            if (tekoAlyLila.olioPelaaKierroksensa() == true) {
+            if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
                 System.out.println("tekoAlyLila on voittanut!");
                 break;
             }
-            if (tekoAlyPurppura.olioPelaaKierroksensa() == true) {
+            if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
                 System.out.println("tekoAlyPurppura on voittanut!");
                 break;
             }
-            if (tekoAlyGold.olioPelaaKierroksensa() == true) {
+            if (tekoAlySininen.olioPelaaKierroksensa() == true) {
                 System.out.println("tekoAlyGold on voittanut!");
                 break;
             } else {

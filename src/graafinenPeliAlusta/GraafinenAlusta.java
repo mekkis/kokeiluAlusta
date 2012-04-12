@@ -21,6 +21,8 @@ public class GraafinenAlusta extends JFrame {
         ikkuna.setSize(750, 700);
         ikkuna.setVisible(true);
         ikkuna.setBackground(Color.BLACK);
+
+        int r = 0, g = 0, y = 0, b = 0;
     }
 }
 
@@ -84,7 +86,7 @@ class AloitusTilanne extends JPanel {
         g.fillOval(680, 470, 50, 50);
 
         g.setColor(Color.BLUE);
-        g.fillOval(680, 50, 50, 50);//oikeaala pelaaja
+        g.fillOval(680, 50, 50, 50);//vasenala pelaaja
         g.fillOval(620, 50, 50, 50);
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
