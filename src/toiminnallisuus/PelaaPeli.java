@@ -48,6 +48,9 @@ public class PelaaPeli {
      */
     public void pelaus() {
         asetaPelaajatPeliavarten();
+
+        System.out.println("\nKierros: " + kierros);
+
         while (true) {
             System.out.println("\nKierros: " + kierros);
             if (mikko.olioPelaaKierroksensa() == true) {
@@ -55,15 +58,15 @@ public class PelaaPeli {
                 break;
             }
             if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlyLila on voittanut!");
+                System.out.println("tekoAlyVihrea on voittanut!");
                 break;
             }
             if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlyPurppura on voittanut!");
+                System.out.println("tekoAlyKeltainen on voittanut!");
                 break;
             }
             if (tekoAlySininen.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlyGold on voittanut!");
+                System.out.println("tekoAlySininen on voittanut!");
                 break;
             } else {
                 kierros++;

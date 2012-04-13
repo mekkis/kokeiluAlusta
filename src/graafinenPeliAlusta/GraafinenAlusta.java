@@ -1,8 +1,10 @@
 package graafinenPeliAlusta;
 
 import java.awt.Color;
+import java.awt.Container;
 import javax.swing.*;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 
 /**
  * 
@@ -22,13 +24,18 @@ public class GraafinenAlusta extends JFrame {
         ikkuna.setVisible(true);
         ikkuna.setBackground(Color.BLACK);
 
+
+
         int r = 0, g = 0, y = 0, b = 0;
     }
 }
 
 class AloitusTilanne extends JPanel {
 
-    public void paintComponent(Graphics g) {
+    int avain = 112;
+
+    public void paint(Graphics g) {
+        super.paint(g);
         g.setColor(Color.WHITE);
         g.drawString("Pelaaja 1", 20, 20); // teksti
         g.drawString("Pelaaja 2", 620, 20); // teksti
@@ -90,5 +97,9 @@ class AloitusTilanne extends JPanel {
         g.fillOval(620, 50, 50, 50);
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
+        avain = KeyEvent.VK_SPACE;
+    }
+
+    public void keyPressed(KeyEvent e) {
     }
 }
