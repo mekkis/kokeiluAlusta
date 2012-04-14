@@ -14,23 +14,21 @@ public class Pelilauta extends JPanel implements KeyListener {
     int ry = 0;
     private int nopanKerroin;
     int[] reds;
+    toiminnallisuus.PelaaPeli peli;
 
     public Pelilauta() {
-        toiminnallisuus.PeliKierros kierros = new toiminnallisuus.PeliKierros();
-        kierros.olioPelaaKierroksensa();
+        peli = new toiminnallisuus.PelaaPeli();
     }
 
     public void keyTyped(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public void keyReleased(KeyEvent ke) {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == avainRed) {
-            for (int i = 1; i <= noppa(); i++) { //nappi siirtyy nopan verran
+            for (int i = 0; i <= peli.mikko.pylpyra.getNappulanSijainti(0); i++) { //nappi siirtyy nopan verran
                 if (rx < 440 && ry == 0) {
                     palloLiikkuuOikealle();     //rx kasvaa ry vakio
                 } else if (rx > 440 && ry < 410) {
@@ -129,12 +127,27 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
 
+        peli.pelaus();
         g.setColor(Color.RED);
-        g.fillOval(80 + rx, 50 + ry, 50, 50);
+        g.fillOval(80, 50, 50, 50);
         g.fillOval(20, 50, 50, 50);
         g.fillOval(20, 110, 50, 50);
         g.fillOval(80, 110, 50, 50);
-
+        if (peli.mikko.pylpyra.getNappulanSijainti(0) > 0) {
+            g.fillOval(80 + rx, 50 + ry, 50, 50);
+            g.fillOval(20, 50, 50, 50);
+            g.fillOval(20, 110, 50, 50);
+            g.fillOval(80, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(1) > 0) {
+            g.fillOval(80 + rx, 50 + ry, 50, 50);
+            g.fillOval(20, 110, 50, 50);
+            g.fillOval(80, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(2) > 0) {
+            g.fillOval(80 + rx, 50 + ry, 50, 50);
+            g.fillOval(80, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0) {
+            g.fillOval(80 + rx, 50 + ry, 50, 50);
+        }
         g.drawString("pain space, heittaaksesi noppaa", 100, 600);
         avainRed = KeyEvent.VK_SPACE;
         lopeta = KeyEvent.VK_ESCAPE;

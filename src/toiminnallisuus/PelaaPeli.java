@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
-    String vastaus="k";
+    String vastaus = "k";
     /**
      * 
      */
@@ -18,10 +18,10 @@ public class PelaaPeli {
      * 
      */
     public String nappulanVari = "";
-    PeliKierros mikko = new PeliKierros();
-    PeliKierros tekoAlyVihrea = new PeliKierros();
-    PeliKierros tekoAlyKeltainen = new PeliKierros();
-    PeliKierros tekoAlySininen = new PeliKierros();
+    public PeliKierros mikko = new PeliKierros();
+    public PeliKierros tekoAlyVihrea = new PeliKierros();
+    public PeliKierros tekoAlyKeltainen = new PeliKierros();
+    public PeliKierros tekoAlySininen = new PeliKierros();
 
     /**
      * kierrosten alustus
@@ -52,7 +52,7 @@ public class PelaaPeli {
 
         System.out.println("\nKierros: " + kierros);
 
-        while(vastaus.equals("k")){
+        while (vastaus.equals("k")) {
             System.out.println("\nKierros: " + kierros);
             if (mikko.olioPelaaKierroksensa() == true) {
                 System.out.println("Onnittelut voitit!");
@@ -77,25 +77,25 @@ public class PelaaPeli {
             }
         }
         /*while (true) {
-            System.out.println("\nKierros: " + kierros);
-            if (mikko.olioPelaaKierroksensa() == true) {
-                System.out.println("Onnittelut voitit!");
-                break;
-            }
-            if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlyVihrea on voittanut!");
-                break;
-            }
-            if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlyKeltainen on voittanut!");
-                break;
-            }
-            if (tekoAlySininen.olioPelaaKierroksensa() == true) {
-                System.out.println("tekoAlySininen on voittanut!");
-                break;
-            } else {
-                kierros++;
-            }
+        System.out.println("\nKierros: " + kierros);
+        if (mikko.olioPelaaKierroksensa() == true) {
+        System.out.println("Onnittelut voitit!");
+        break;
+        }
+        if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
+        System.out.println("tekoAlyVihrea on voittanut!");
+        break;
+        }
+        if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
+        System.out.println("tekoAlyKeltainen on voittanut!");
+        break;
+        }
+        if (tekoAlySininen.olioPelaaKierroksensa() == true) {
+        System.out.println("tekoAlySininen on voittanut!");
+        break;
+        } else {
+        kierros++;
+        }
         }*/
     }
 }
