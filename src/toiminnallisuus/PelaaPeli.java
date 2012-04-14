@@ -9,6 +9,7 @@ import java.util.Scanner;
 public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
+    String vastaus="k";
     /**
      * 
      */
@@ -51,7 +52,31 @@ public class PelaaPeli {
 
         System.out.println("\nKierros: " + kierros);
 
-        while (true) {
+        while(vastaus.equals("k")){
+            System.out.println("\nKierros: " + kierros);
+            if (mikko.olioPelaaKierroksensa() == true) {
+                System.out.println("Onnittelut voitit!");
+                break;
+            }
+            if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
+                System.out.println("tekoAlyVihrea on voittanut!");
+                break;
+            }
+            if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
+                System.out.println("tekoAlyKeltainen on voittanut!");
+                break;
+            }
+            if (tekoAlySininen.olioPelaaKierroksensa() == true) {
+                System.out.println("tekoAlySininen on voittanut!");
+                break;
+            } else {
+                kierros++;
+                System.out.println("Heita noppaa uudelleen painamalla k=kylla");
+                vastaus = lukija.nextLine();
+
+            }
+        }
+        /*while (true) {
             System.out.println("\nKierros: " + kierros);
             if (mikko.olioPelaaKierroksensa() == true) {
                 System.out.println("Onnittelut voitit!");
@@ -71,6 +96,6 @@ public class PelaaPeli {
             } else {
                 kierros++;
             }
-        }
+        }*/
     }
 }

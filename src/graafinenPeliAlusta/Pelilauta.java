@@ -12,7 +12,13 @@ public class Pelilauta extends JPanel implements KeyListener {
     int lopeta;
     int rx = 0;
     int ry = 0;
-    private int nopanKerroin = 1;
+    private int nopanKerroin;
+    int[] reds;
+
+    public Pelilauta() {
+        toiminnallisuus.PeliKierros kierros = new toiminnallisuus.PeliKierros();
+        kierros.olioPelaaKierroksensa();
+    }
 
     public void keyTyped(KeyEvent ke) {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -24,16 +30,18 @@ public class Pelilauta extends JPanel implements KeyListener {
 
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == avainRed) {
-            if (rx < 440 && ry == 0) {
-                palloLiikkuuOikealle();     //rx kasvaa ry vakio
-            } else if (rx > 440 && ry < 410) {
-                palloLiikkuuAlas();         //ry kasvaa rx vakio
-            } else if (rx > 80 && ry > 410) {
-                palloLiikkuuVasemmalle();   //rx pienenee ry vakio
-            } else if (rx < 80 && ry > 60) {
-                palloLiikkuuYlos();         //rx vakio ry pienenee
-            } else if (rx < 260 && ry > 0) {
-                palloLiikkuuOikealle();         //rx vakio ry pienenee
+            for (int i = 1; i <= noppa(); i++) { //nappi siirtyy nopan verran
+                if (rx < 440 && ry == 0) {
+                    palloLiikkuuOikealle();     //rx kasvaa ry vakio
+                } else if (rx > 440 && ry < 410) {
+                    palloLiikkuuAlas();         //ry kasvaa rx vakio
+                } else if (rx > 80 && ry > 410) {
+                    palloLiikkuuVasemmalle();   //rx pienenee ry vakio
+                } else if (rx < 80 && ry > 60) {
+                    palloLiikkuuYlos();         //rx vakio ry pienenee
+                } else if (rx < 260 && ry > 0) {
+                    palloLiikkuuOikealle();     //rx vakio ry pienenee
+                }
             }
             repaint();
         } else if (ke.getKeyCode() == lopeta) {
@@ -122,7 +130,7 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(680, 110, 50, 50);
 
         g.setColor(Color.RED);
-        g.fillOval(80 + rx, 50 + ry, 50, 50);//vasenyla pelaaja
+        g.fillOval(80 + rx, 50 + ry, 50, 50);
         g.fillOval(20, 50, 50, 50);
         g.fillOval(20, 110, 50, 50);
         g.fillOval(80, 110, 50, 50);
@@ -130,27 +138,27 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.drawString("pain space, heittaaksesi noppaa", 100, 600);
         avainRed = KeyEvent.VK_SPACE;
         lopeta = KeyEvent.VK_ESCAPE;
-        //noppa();
     }
 
-    public void noppa() {
+    public int noppa() {
         toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
         nopanKerroin = noppa.getNopanSilmaluku();
+        return nopanKerroin;
     }
 
     public void palloLiikkuuOikealle() {
-        rx += 60 * nopanKerroin;
+        rx += 60;
     }
 
     public void palloLiikkuuVasemmalle() {
-        rx -= 60 * nopanKerroin;
+        rx -= 60;
     }
 
     public void palloLiikkuuAlas() {
-        ry += 60 * nopanKerroin;
+        ry += 60;
     }
 
     public void palloLiikkuuYlos() {
-        ry -= 60 * nopanKerroin;
+        ry -= 60;
     }
 }
