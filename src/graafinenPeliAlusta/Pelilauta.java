@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class Pelilauta extends JPanel implements KeyListener {
 
-    int avain = 112;
+    int avainRed;
     int lopeta;
     int rx = 0;
     int ry = 0;
@@ -23,7 +23,7 @@ public class Pelilauta extends JPanel implements KeyListener {
     }
 
     public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == avain) {
+        if (ke.getKeyCode() == avainRed) {
             if (rx < 440 && ry == 0) {
                 palloLiikkuuOikealle();     //rx kasvaa ry vakio
             } else if (rx > 440 && ry < 410) {
@@ -32,6 +32,8 @@ public class Pelilauta extends JPanel implements KeyListener {
                 palloLiikkuuVasemmalle();   //rx pienenee ry vakio
             } else if (rx < 80 && ry > 60) {
                 palloLiikkuuYlos();         //rx vakio ry pienenee
+            } else if (rx < 260 && ry > 0) {
+                palloLiikkuuOikealle();         //rx vakio ry pienenee
             }
             repaint();
         } else if (ke.getKeyCode() == lopeta) {
@@ -80,6 +82,27 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(440, 470, 50, 50);
         g.fillOval(500, 470, 50, 50);
 
+        g.setColor(Color.LIGHT_GRAY);
+        g.fillOval(200, 110, 50, 50);//maalit
+        g.fillOval(260, 110, 50, 50);
+        g.fillOval(320, 110, 50, 50);
+        g.fillOval(380, 110, 50, 50);
+
+        g.fillOval(320, 410, 50, 50);
+        g.fillOval(380, 410, 50, 50);
+        g.fillOval(440, 410, 50, 50);
+        g.fillOval(500, 410, 50, 50);
+
+        g.fillOval(500, 110, 50, 50);
+        g.fillOval(500, 170, 50, 50);
+        g.fillOval(500, 230, 50, 50);
+        g.fillOval(500, 290, 50, 50);
+
+        g.fillOval(200, 230, 50, 50);
+        g.fillOval(200, 290, 50, 50);
+        g.fillOval(200, 350, 50, 50);
+        g.fillOval(200, 410, 50, 50);
+
         g.setColor(Color.GREEN);
         g.fillOval(80, 410, 50, 50);//vasenala pelaaja
         g.fillOval(20, 410, 50, 50);
@@ -105,7 +128,7 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(80, 110, 50, 50);
 
         g.drawString("pain space, heittaaksesi noppaa", 100, 600);
-        avain = KeyEvent.VK_SPACE;
+        avainRed = KeyEvent.VK_SPACE;
         lopeta = KeyEvent.VK_ESCAPE;
         //noppa();
     }
