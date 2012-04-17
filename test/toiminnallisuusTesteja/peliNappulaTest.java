@@ -4,7 +4,6 @@ package toiminnallisuusTesteja;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -46,56 +45,80 @@ public class peliNappulaTest {
 
     /*@Test
     public void samatOliotBooleanTesti() { //EI TOIMI
-        PeliNappula A = new PeliNappula("red");
-        PeliNappula B = new PeliNappula("red");
-        assertTrue(A.equals(B));
+    PeliNappula A = new PeliNappula("red");
+    PeliNappula B = new PeliNappula("red");
+    assertTrue(A.equals(B));
     }
-
+    
     @Test
     public void samatOliotEqualsTesti() {   //EI TOIMI
-        PeliNappula AA = new PeliNappula("red");
-        PeliNappula BB = new PeliNappula("red");
-        assertEquals(AA, BB);
+    PeliNappula AA = new PeliNappula("red");
+    PeliNappula BB = new PeliNappula("red");
+    assertEquals(AA, BB);
     }*/
-
     @Test
-    public void lisaaPelinappulaTesti() {
+    public void lisaaPelinappulaTest() {
         silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
         assertTrue(silinteri.tarkistaNappula("Testi-teppo", "donerkebap"));
     }
 
     @Test
-    public void lisaaPelinappulaLkmTesti() {
+    public void lisaaPelinappulaLkmTest() {
         silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
         assertTrue(silinteri.getNappuloidenLkm() == 1);
     }
 
     @Test
-    public void nappulanSijaintiTesti() {
+    public void nappulanSijaintiTest() {
         int paikka = silinteri.setNappulanSijainti(0, 23);
         assertTrue(paikka == silinteri.getNappulanSijainti(0));
     }
 
     @Test
-    public void nappulanLkmTesti() {
+    public void nappulanLkmTest() {
         silinteri.lisaaPelinappula("pallo", "sinertava");
         assertTrue(silinteri.getNappuloidenLkm() == 1);
     }
+
     @Test
-    public void nappulanLisaysTesti() {
+    public void useanNappulanLisaysTest() {
         silinteri.lisaaPelinappula("pallo", "sinertava");
         silinteri.lisaaPelinappula("kuutio", "turkoosi");
         assertTrue(silinteri.getNappuloidenLkm() == 2);
     }
 
     @Test
-    public void nappulanTarkistusTesti() {
+    public void nappulanTarkistusTest() {
         silinteri.lisaaPelinappula("pallo", "keltainen");
         assertEquals(silinteri.tarkistaNappula("pallo", "keltainen"), true);
     }
 
     @Test
-    public void getPelinappulaVariTesti() {
+    public void getPelinappulaVariTest() {
         assertTrue(silinteri.getPeliNappulanVari().equals("red"));
+    }
+
+    @Test
+    public void nappulanLiikutusTest() {
+        silinteri.liikutaNappulaa(10);
+        assertTrue(silinteri.getNappulanSijainti(0) == 10);
+    }
+
+    @Test
+    public void nappulanLiikutusLiikaaTest() {
+        silinteri.liikutaNappulaa(44);
+        assertFalse(silinteri.getNappulanSijainti(0) == 44);
+    }
+
+    @Test
+    public void tietynNappulanLiikutusTest() {
+        silinteri.liikutaTiettyaNappulaa(0, 31);
+        assertTrue(silinteri.getNappulanSijainti(0) == 31);
+    }
+
+    @Test
+    public void tietynNappulanLiikutusLiikaaTest() {
+        silinteri.liikutaTiettyaNappulaa(0, 52);
+        assertFalse(silinteri.getNappulanSijainti(0) == 52);
     }
 }

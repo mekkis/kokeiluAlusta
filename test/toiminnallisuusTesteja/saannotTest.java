@@ -4,7 +4,6 @@ package toiminnallisuusTesteja;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,11 +19,11 @@ public class saannotTest {
     
     public saannotTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() throws Exception {
     }
-
+    
     @AfterClass
     public static void tearDownClass() throws Exception {
     }
@@ -36,14 +35,18 @@ public class saannotTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //   
-    
+
     @Test
-    public void tulostaSaannotTesti() {
+    public void tulostaSaannotTest() {
         toiminnallisuus.Saannot laki = new toiminnallisuus.Saannot();
-        String teksti=laki.tulostaSaannot();
+        String teksti = laki.tulostaSaannot();
         assertFalse(teksti.isEmpty());
+    }
+
+    @Test
+    public void saannoistaLoytyyJokinSanaTest() {
+        toiminnallisuus.Saannot laki = new toiminnallisuus.Saannot();
+        String teksti = laki.tulostaSaannot();
+        assertTrue(teksti.contains("saannot"));
     }
 }
