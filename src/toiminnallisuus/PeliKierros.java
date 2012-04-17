@@ -9,18 +9,9 @@ import java.util.Scanner;
 public class PeliKierros {
 
     static Scanner lukija = new Scanner(System.in);
-    int nopanSilmaluku = 0;
-    /**
-     * 
-     */
+    public int nopanSilmaluku = 0;
     public PeliNappula pylpyra = new PeliNappula("");
-    /**
-     * 
-     */
     public String nappulanVari = "";
-    /**
-     * 
-     */
     public int nappulanNro = 0;
     int s;
 

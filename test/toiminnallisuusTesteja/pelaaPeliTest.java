@@ -4,7 +4,6 @@ package toiminnallisuusTesteja;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -52,5 +51,15 @@ public class pelaaPeliTest {
     public void pelaajanNappulallaEiVariaAluksiTesti() {
         assertTrue(kekkonen.nappulanVari.isEmpty());
     }
-}
 
+    @Test
+    public void pelaajanVariTest() {
+        kekkonen.mikko.alustaPelaaja("valkoinen");
+        assertTrue(kekkonen.mikko.pylpyra.getPeliNappulanVari().equals("valkoinen"));
+    }
+
+    @Test
+    public void nappulanVariAluksiTyhjaTest() {
+        assertTrue(kekkonen.nappulanVari.isEmpty());
+    }
+}

@@ -4,7 +4,6 @@ package toiminnallisuusTesteja;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,40 +41,59 @@ public class peliKierrosTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 
     @Test
-    public void pelaajanAlustusTesti() {
+    public void pelaajanAlustusTest() {
         assertTrue(vari.equals("punainen"));
     }
 
     @Test
-    public void pelaajanNappulanSijaintiTesti() {
+    public void pelaajanNappulanSijaintiTest() {
         eka.pylpyra.setNappulanSijainti(0, 15);
         int paikka = eka.pylpyra.getNappulanSijainti(0);
         assertTrue(paikka == 15);
     }
 
     @Test
-    public void ensimmaisellaKierroksellaPeliEiLopuTesti() {
+    public void ensimmaisellaKierroksellaPeliEiLopuTest() {
         eka.olioPelaaKierroksensa();
         assertFalse(eka.olioPelaaKierroksensa());
     }
 
     @Test
-    public void seuraavaNappulaTesti() {
+    public void seuraavaNappulaTest() {
         eka.pylpyra.setNappulanSijainti(0, 29);
         eka.olioPelaaKierroksensa();
         assertTrue(eka.nappulanNro > 0);
     }
 
     @Test
-    public void eiViidettaNappulaaTesti() {
+    public void eiViidettaNappulaaTest() {
         eka.pylpyra.setNappulanSijainti(3, 29);
         assertFalse(eka.olioPelaaKierroksensa());
+    }
+
+    @Test
+    public void pelaajaHeittaaNoppaaKerranJaSaaPositiivisenLuvunTest() {
+        eka.pelaajaHeittaaNoppaaKerran();
+        assertTrue(eka.nopanSilmaluku > 0);
+    }
+
+    @Test
+    public void pelaajaHeittaaNoppaaKerranJaSaaPienennmmanKuinSeitsemanTest() {
+        eka.pelaajaHeittaaNoppaaKerran();
+        assertTrue(eka.nopanSilmaluku < 7);
+    }
+
+    @Test
+    public void ensimmainenNappulaLiikkuuTest() {
+        eka.siirraNappulaaNopanLukemanVerran(0, 2);
+        assertTrue(eka.pylpyra.getNappulanSijainti(0) == 2);
+    }
+
+    @Test
+    public void uusiNappulaAloitusRuutuunTest() {
+        eka.uusiNappulaAloitusRuutuun();
+        assertTrue(eka.pylpyra.getNappulanSijainti(0) == 1);
     }
 }

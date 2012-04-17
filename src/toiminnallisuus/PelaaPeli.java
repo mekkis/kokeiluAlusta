@@ -50,7 +50,7 @@ public class PelaaPeli {
     public void pelaus() {
         asetaPelaajatPeliavarten();
 
-        System.out.println("\nKierros: " + kierros);
+        //System.out.println("\nKierros: " + kierros);
 
         while (vastaus.equals("k")) {
             System.out.println("\nKierros: " + kierros);

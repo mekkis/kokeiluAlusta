@@ -4,7 +4,6 @@ package toiminnallisuusTesteja;
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,6 +18,7 @@ import static org.junit.Assert.*;
 public class nopanHeittoTest {
 
     private int luku;
+        toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
 
     public nopanHeittoTest() {
     }
@@ -33,7 +33,6 @@ public class nopanHeittoTest {
 
     @Before
     public void setUp() {
-        toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
         luku = noppa.getNopanSilmaluku();
     }
 
@@ -47,12 +46,12 @@ public class nopanHeittoTest {
     // public void hello() {}
 
     @Test
-    public void nopanlukuAlleSeitseman() {
+    public void nopanlukuAlleSeitsemanTest() {
         assertTrue(luku < 7);
     }
 
     @Test
-    public void nopanlukuPositiivinen() { 
+    public void nopanlukuPositiivinenTest() {
         assertTrue(luku > 0);
     }
 }
