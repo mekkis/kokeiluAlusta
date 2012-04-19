@@ -32,18 +32,20 @@ public class PeliKierros {
     public void pelaajaHeittaaNoppaaKerran() {
         NopanHeitto heitto = new NopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
-        if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku < 6) {
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 26) && nopanSilmaluku == 6) {
+        if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 31) && nopanSilmaluku < 6) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 27) && nappulanNro < 5) {
             uusiNappulaAloitusRuutuun();
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 32)) {
+            siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
+            if (pelinappulaSamassaRuudussa() == true) {
+                System.out.println("Parempi onni seuraavalla heitolla!");
+                siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
+            }
+        }
+        if (nopanSilmaluku == 6) {
             pelaajaHeittaaNoppaaKerran();
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 27) && nopanSilmaluku <= 6) {
-            if (pelinappulaSamassaRuudussa() == false) {
-                siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
-            }
-            if (nopanSilmaluku == 6) {
-                pelaajaHeittaaNoppaaKerran();
-            }
-        }/* else if ((pylpyra.getNappulanSijainti(m) > 0 || pylpyra.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
+        }
+        /* else if ((pylpyra.getNappulanSijainti(m) > 0 || pylpyra.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
         useitaNappuloitaPeliin();
         }*/
     }
@@ -68,7 +70,7 @@ public class PeliKierros {
      * Jos pelaaja saa nopalla 6 ja pelaajalla on jo yksi pelinappula kiertamassa, 
      * niin tiedustellaan halukkuus toiseen pelinappulaan kiertamaan pelilaudelle.
      */
-    public void useitaNappuloitaPeliin() { // ei tarpeen, jos vain 1 nappula kerralla pelissä!!
+    /*public void useitaNappuloitaPeliin() { // ei tarpeen, jos vain 1 nappula kerralla pelissä!!
         System.out.println("Haluatko uuden nappulan aktiiviseksi? k/e");
         String vastausUuteenNappulaan = lukija.nextLine();
         if (vastausUuteenNappulaan.equals("e")) {
@@ -77,25 +79,25 @@ public class PeliKierros {
             uusiNappulaAloitusRuutuun();
         }
     }
-
+*/
     /**
      * 
      * @return
      */
     public boolean pelinappulaSamassaRuudussa() {
         if (nappulanNro == 1) {
-            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)) {
+            if (pylpyra.getNappulanSijainti(1) == pylpyra.getNappulanSijainti(0)) {
                 return true;
             }
         } else if (nappulanNro == 2) {
-            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)
-                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 2)) {
+            if (pylpyra.getNappulanSijainti(2) == pylpyra.getNappulanSijainti(1)
+                    || pylpyra.getNappulanSijainti(2) == pylpyra.getNappulanSijainti(0)) {
                 return true;
             }
         } else if (nappulanNro == 3) {
-            if (pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 1)
-                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 2)
-                    || pylpyra.getNappulanSijainti(nappulanNro) == pylpyra.getNappulanSijainti(nappulanNro - 3)) {
+            if (pylpyra.getNappulanSijainti(3) == pylpyra.getNappulanSijainti(2)
+                    || pylpyra.getNappulanSijainti(3) == pylpyra.getNappulanSijainti(1)
+                    || pylpyra.getNappulanSijainti(3) == pylpyra.getNappulanSijainti(0)) {
                 return true;
             }
         }
