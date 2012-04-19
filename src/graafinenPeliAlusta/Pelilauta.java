@@ -148,8 +148,8 @@ public class Pelilauta extends JPanel implements KeyListener {
         } else if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
         }
-        g.drawString("pain space, heittaaksesi noppaa", 100, 600);
-        avainRed = KeyEvent.VK_SPACE;
+        //g.drawString("pain k, heittaaksesi noppaa", 100, 600);
+        avainRed = KeyEvent.VK_K;
         lopeta = KeyEvent.VK_ESCAPE;
     }
 
