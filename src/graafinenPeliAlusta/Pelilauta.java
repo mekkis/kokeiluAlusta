@@ -12,7 +12,8 @@ public class Pelilauta extends JPanel implements KeyListener {
     int lopeta;
     int rx = 0;
     int ry = 0;
-    private int nopanKerroin;
+    int i;
+    int sijainninMuutos = 0;
     int[] reds;
     toiminnallisuus.PelaaPeli peli;
 
@@ -29,14 +30,17 @@ public class Pelilauta extends JPanel implements KeyListener {
 
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == avainRed) {
-            for (int i = 0; i <= peli.mikko.pylpyra.getNappulanSijainti(0); i++) { //nappi siirtyy nopan verran
+            sijainninMuutos = peli.mikko.pylpyra.getNappulanSijainti(0) - i;
+            System.out.println("sijainninmuutos =" + sijainninMuutos);
+            System.out.println("siirtyma i=" + i);
+            for (i = 0; i < sijainninMuutos; i++) { //nappi siirtyy nopan verran
                 if (rx < 440 && ry == 0) {
                     palloLiikkuuOikealle();     //rx kasvaa ry vakio
-                } else if (rx > 440 && ry < 410) {
+                } else if (rx == 480 && ry < 410) {
                     palloLiikkuuAlas();         //ry kasvaa rx vakio
-                } else if (rx > 80 && ry > 410) {
+                } else if (rx > 80 && ry == 420) {
                     palloLiikkuuVasemmalle();   //rx pienenee ry vakio
-                } else if (rx < 80 && ry > 60) {
+                } else if (rx == 60 && ry > 60) {
                     palloLiikkuuYlos();         //rx vakio ry pienenee
                 } else if (rx < 260 && ry > 0) {
                     palloLiikkuuOikealle();     //rx vakio ry pienenee
@@ -128,38 +132,49 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
 
-        peli.pelausGui();
         g.setColor(Color.RED);
         g.fillOval(80, 50, 50, 50);
         g.fillOval(20, 50, 50, 50);
         g.fillOval(20, 110, 50, 50);
         g.fillOval(80, 110, 50, 50);
+        g.drawString("punaisen sijainti edellinen" + peli.mikko.pylpyra.getNappulanSijainti(0), 100, 620);
+
+        peli.pelausGui();
         if (peli.mikko.pylpyra.getNappulanSijainti(0) > 0) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
             g.fillOval(20, 50, 50, 50);
             g.fillOval(20, 110, 50, 50);
             g.fillOval(80, 110, 50, 50);
-        } else if (peli.mikko.pylpyra.getNappulanSijainti(1) > 0) {
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(1) > 0 && peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
             g.fillOval(20, 110, 50, 50);
             g.fillOval(80, 110, 50, 50);
-        } else if (peli.mikko.pylpyra.getNappulanSijainti(2) > 0) {
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(2) > 0 && peli.mikko.pylpyra.getNappulanSijainti(1) > 28
+                && peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
             g.fillOval(80, 110, 50, 50);
-        } else if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0) {
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0 && peli.mikko.pylpyra.getNappulanSijainti(2) > 28
+                && peli.mikko.pylpyra.getNappulanSijainti(2) > 28 && peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
         }
-        g.drawString("pain k, heittaaksesi noppaa", 100, 600);
+        g.drawString("pain k, heittaaksesi noppaa ", 100, 600);
+        g.drawString("punaisen sijainti uusin" + peli.mikko.pylpyra.getNappulanSijainti(0), 100, 640);
         avainRed = KeyEvent.VK_K;
         lopeta = KeyEvent.VK_ESCAPE;
+
     }
 
-    public int noppa() {
-        toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
-        nopanKerroin = noppa.getNopanSilmaluku();
-        return nopanKerroin;
-    }
-
+    /*public void redEkaNappula(Graphics g) {
+    g.fillOval(80 + rx, 50 + ry, 50, 50);
+    g.fillOval(20, 50, 50, 50);
+    g.fillOval(20, 110, 50, 50);
+    g.fillOval(80, 110, 50, 50);
+    }*/
+//    public int noppa() {
+//        toiminnallisuus.NopanHeitto noppa = new toiminnallisuus.NopanHeitto();
+//        nopanKerroin = noppa.getNopanSilmaluku();
+//        return nopanKerroin;
+//    }
     public void palloLiikkuuOikealle() {
         rx += 60;
     }
