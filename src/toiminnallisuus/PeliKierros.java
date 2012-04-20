@@ -32,10 +32,10 @@ public class PeliKierros {
     public void pelaajaHeittaaNoppaaKerran() {
         NopanHeitto heitto = new NopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
-        if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 31) && nopanSilmaluku < 6) {
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 27) && nappulanNro < 5) {
+        if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 32) && nopanSilmaluku < 6) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 28) && nappulanNro < 5) {
             uusiNappulaAloitusRuutuun();
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 32)) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 33)) {
             siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
             if (pelinappulaSamassaRuudussa() == true) {
                 System.out.println("Parempi onni seuraavalla heitolla!");
@@ -123,7 +123,7 @@ public class PeliKierros {
      */
     public boolean tarkistaMaaliinPaasy() {
         int numerointiNappuloille = nappulanNro + 1;
-        if (pylpyra.getNappulanSijainti(nappulanNro) > 27 && pylpyra.getNappulanSijainti(nappulanNro) < 32) {
+        if (pylpyra.getNappulanSijainti(nappulanNro) > 28 && pylpyra.getNappulanSijainti(nappulanNro) < 33) {
             /*   if (m > 0 && pylpyra.getNappulanSijainti(m) != pylpyra.getNappulanSijainti(m - 1)) {
             System.out.println("Pelaaja " + this.nappulanVari + " on paassyt maaliin");
             return true;
