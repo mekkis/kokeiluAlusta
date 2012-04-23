@@ -9,21 +9,9 @@ import java.util.Scanner;
 public class PeliKierros {
 
     static Scanner lukija = new Scanner(System.in);
-    /**
-     * 
-     */
     public int nopanSilmaluku = 0;
-    /**
-     * 
-     */
     public PeliNappula pylpyra = new PeliNappula("");
-    /**
-     * 
-     */
     public String nappulanVari = "";
-    /**
-     * 
-     */
     public int nappulanNro = 0;
     int s;
 
@@ -57,6 +45,7 @@ public class PeliKierros {
         if (nopanSilmaluku == 6) {
             pelaajaHeittaaNoppaaKerran();
         }
+        // kehitys joka jäänee suorittamatta
         /* else if ((pylpyra.getNappulanSijainti(m) > 0 || pylpyra.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
         useitaNappuloitaPeliin();
         }*/
@@ -78,23 +67,24 @@ public class PeliKierros {
         pylpyra.liikutaTiettyaNappulaa(nappulanNro, 1);
     }
 
-    /**
+    /* Kehitys joka jäänee tekemättä tähän versioon.
+     * 
      * Jos pelaaja saa nopalla 6 ja pelaajalla on jo yksi pelinappula kiertamassa, 
      * niin tiedustellaan halukkuus toiseen pelinappulaan kiertamaan pelilaudelle.
      */
     /*public void useitaNappuloitaPeliin() { // ei tarpeen, jos vain 1 nappula kerralla pelissä!!
-        System.out.println("Haluatko uuden nappulan aktiiviseksi? k/e");
-        String vastausUuteenNappulaan = lukija.nextLine();
-        if (vastausUuteenNappulaan.equals("e")) {
-            siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
-        } else if (vastausUuteenNappulaan.equals("k")) {
-            uusiNappulaAloitusRuutuun();
-        }
+    System.out.println("Haluatko uuden nappulan aktiiviseksi? k/e");
+    String vastausUuteenNappulaan = lukija.nextLine();
+    if (vastausUuteenNappulaan.equals("e")) {
+    siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
+    } else if (vastausUuteenNappulaan.equals("k")) {
+    uusiNappulaAloitusRuutuun();
     }
-*/
+    }
+     */
     /**
-     * 
-     * @return
+     * Tarkistaa etta nappula ei mene samaan ruutuun toisen nappulan kanssa
+     * @return boolean
      */
     public boolean pelinappulaSamassaRuudussa() {
         if (nappulanNro == 1) {
@@ -136,15 +126,8 @@ public class PeliKierros {
     public boolean tarkistaMaaliinPaasy() {
         int numerointiNappuloille = nappulanNro + 1;
         if (pylpyra.getNappulanSijainti(nappulanNro) > 28 && pylpyra.getNappulanSijainti(nappulanNro) < 33) {
-            /*   if (m > 0 && pylpyra.getNappulanSijainti(m) != pylpyra.getNappulanSijainti(m - 1)) {
-            System.out.println("Pelaaja " + this.nappulanVari + " on paassyt maaliin");
-            return true;
-            } else if (m > 0 && pylpyra.getNappulanSijainti(m) == pylpyra.getNappulanSijainti(m - 1)) {
-            return false;
-            } else {*/
             System.out.println("Pelaajan " + this.nappulanVari + " nappula" + numerointiNappuloille + " on paassyt maaliin");
             return true;
-            //}
         } else {
             return false;
         }

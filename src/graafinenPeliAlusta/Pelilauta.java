@@ -1,6 +1,5 @@
 package graafinenPeliAlusta;
 
-// Mika Kekalainen
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.*;
@@ -45,7 +44,7 @@ public class Pelilauta extends JPanel implements KeyListener {
     }
 
     /**
-     * 
+     * Tutkii painetun kirjaimen mukaan, mita seuraavaksi pelissa tapahtuu
      * @param ke
      */
     public void keyPressed(KeyEvent ke) {
@@ -77,7 +76,7 @@ public class Pelilauta extends JPanel implements KeyListener {
     }
 
     /**
-     * 
+     * pelilaudan grafiikka
      * @param g
      */
     public void paint(Graphics g) {

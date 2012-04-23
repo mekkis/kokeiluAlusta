@@ -31,7 +31,7 @@ public class PeliNappula {
     }
 
     /**
-     * 
+     * asetetaan pelinappulalle vari
      * @param vari
      */
     public void setPelinappulanVari(String vari) {
@@ -72,7 +72,7 @@ public class PeliNappula {
     }
 
     /**
-     * 
+     * liikutetaan jotakin tiettya pelinappulaa
      * @param siirto
      * @param nappulanNumero
      */
@@ -85,7 +85,7 @@ public class PeliNappula {
     }
 
     /**
-     * 
+     * nappulan sijainti
      * @param k integer 1..4 pelaajan nappula
      * @return integer sijanti
      */
@@ -112,7 +112,7 @@ public class PeliNappula {
     }
 
     /**
-     * 
+     * nappuloiden lukumaara
      * @return integer nappuloidenlkm
      */
     public int getNappuloidenLkm() {

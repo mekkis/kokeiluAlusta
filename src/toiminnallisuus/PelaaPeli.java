@@ -10,29 +10,15 @@ public class PelaaPeli {
 
     static Scanner lukija = new Scanner(System.in);
     String vastaus = "k";
-    /**
-     * 
-     */
     public int kierros;
-    /**
-     * 
-     */
     public String nappulanVari = "";
-    /**
-     * 
-     */
+   
     public PeliKierros mikko = new PeliKierros();
-    /**
-     * 
-     */
+    
     public PeliKierros tekoAlyVihrea = new PeliKierros();
-    /**
-     * 
-     */
+    
     public PeliKierros tekoAlyKeltainen = new PeliKierros();
-    /**
-     * 
-     */
+    
     public PeliKierros tekoAlySininen = new PeliKierros();
 
     /**
@@ -44,7 +30,7 @@ public class PelaaPeli {
     }
 
     /**
-     * 
+     * neljan pelaajan asettaminen peliin
      */
     public void asetaPelaajatPeliavarten() {
         //mikko.pylpyra.setPelinappulanVari();
@@ -61,8 +47,6 @@ public class PelaaPeli {
      */
     public void pelaus() {
         asetaPelaajatPeliavarten();
-
-        //System.out.println("\nKierros: " + kierros);
 
         while (vastaus.equals("k")) {
             System.out.println("\nKierros: " + kierros);
@@ -91,7 +75,8 @@ public class PelaaPeli {
     }
 
     /**
-     * 
+     * kimblen pelaaminen GUI:lla 3 tietokone pelaajaa vastaan.
+     * Lisataan pelaajat, valitaan pelinappuloiden vari ja aletaan heittaa noppaa
      */
     public void pelausGui() {
         System.out.println("\nKierros: " + kierros);

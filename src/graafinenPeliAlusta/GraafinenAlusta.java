@@ -8,7 +8,7 @@ import javax.swing.*;
 public class GraafinenAlusta {
 
     /**
-     * 
+     * Graafinen pelialusta
      * @param args
      */
     public static void main(String[] args) {
