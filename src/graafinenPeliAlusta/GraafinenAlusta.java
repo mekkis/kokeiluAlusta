@@ -23,7 +23,7 @@ public class GraafinenAlusta {
         
         ikkuna.setTitle("kimble");
         ikkuna.addKeyListener(peli);
-        ikkuna.setSize(750, 700);           //ikkunan koko
+        ikkuna.setSize(750, 660);           //ikkunan koko
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);            //aja nakyviin
     }
