@@ -1,0 +1,6 @@
+Pelin käynnistäminen:
+1) avaa pääte ja siirry kansioon kokeiluAlusta
+2) käännä ohjelma komennolla: javac peliAlusta/KokeiluAlusta.java
+3) käynnistä ohjelma komennolla: java peliAlusta/KokeiluAlusta
+4) toimi pelissä annettujen ohjeiden mukaisesti
+5) lopeta pääte komennolla: exit

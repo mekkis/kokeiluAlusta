@@ -83,7 +83,7 @@ public class PeliKierros {
     }
      */
     /**
-     * Tarkistaa etta nappula ei mene samaan ruutuun toisen nappulan kanssa
+     * Tarkistaa etta nappula ei mene samaan ruutuun toisen(edellisen) nappulan kanssa
      * @return boolean
      */
     public boolean pelinappulaSamassaRuudussa() {

@@ -83,13 +83,13 @@ public class PelaaPeli {
         if (mikko.olioPelaaKierroksensa() == true) {
             System.out.println("Onnittelut voitit!");
         }
-        if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
+        else if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
             System.out.println("tekoAlyVihrea on voittanut!");
         }
-        if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
+        else if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
             System.out.println("tekoAlyKeltainen on voittanut!");
         }
-        if (tekoAlySininen.olioPelaaKierroksensa() == true) {
+        else if (tekoAlySininen.olioPelaaKierroksensa() == true) {
             System.out.println("tekoAlySininen on voittanut!");
         } else {
             kierros++;
