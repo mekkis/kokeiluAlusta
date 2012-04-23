@@ -7,7 +7,7 @@ Tyon aihe: Kimble
 Pelin idea:
 Kimblessa on 1-4 pelaajaa, jotka heittavat vuorotellen noppaa.
 Jokaisella pelaajalla on 4 pelinappulaa kotipesassa.
-Pelinappulan saa aktiiviseksi, kun pelaaja saa nopasta kuusi.
+Pelinappulan saa aktiiviseksi vain, kun pelaaja saa nopasta kuutosen.
 Pelaaja, joka saa kaikki omat nappulana ensimmäisenä maaliin on voittaja.
 Vastustajan pelaajia voidaan syoda takaisin kotipesaan, jos tullaan samaan ruutuun.
 
@@ -19,10 +19,10 @@ Pelaaja:
 -pelinappuloita 4kpl per pelaaja
 
 Pelinappula:
--alustaminen eli sijainti alussa on kotipesa, kunnes heitetään 6 nopalla
+-alustaminen eli sijainti alussa on kotipesa, kunnes heitetään 6 nopalla -> pelinappula lahtoruutuun.
 -siirtyminen nopan silmaluvun mukaan eteenpäin, jos mahdollista(ei toista omaa nappulaa jo k.o. kohdassa)
--vastustajan syöminen
--maaliin pääseminen
+-vastustajan syominen
+-maaliin paaseminen
 
 noppa:
 -noppa saa arvot 1-6
@@ -31,7 +31,8 @@ aloittaja:
 -voidaan arpoa pelaajien kesken nopalla, suurin silmaluku voittaa.
 
 pelikehys:
--kysyttavä kuinka monta pelaajaa 1..4 on pelaamassa (ja kuka pelaa millakin varilla)
+-tiedustelee haluatko lukea ohjeet ennen pelaamista.
+-Voi kysytta pelaajien lukumaaran 1..4 tai kuka pelaa millakin varilla.
 
 pelikierros:
--huolehtii, etta jokainen 1..4 pelaajasta heittaa noppaa, ja etenee pelinappulalla (jos mahdollista).
+-huolehtii, etta jokainen pelaaja heittaa noppaa, ja etenee pelinappulalla (jos mahdollista) maalia kohti.

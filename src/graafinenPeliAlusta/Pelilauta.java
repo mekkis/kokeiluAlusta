@@ -6,6 +6,10 @@ import java.awt.Graphics;
 import java.awt.event.*;
 import javax.swing.JPanel;
 
+/**
+ * 
+ * @author mikakekalainen
+ */
 public class Pelilauta extends JPanel implements KeyListener {
 
     int avainRed;
@@ -17,17 +21,32 @@ public class Pelilauta extends JPanel implements KeyListener {
     int[] reds;
     toiminnallisuus.PelaaPeli peli;
 
+    /**
+     * 
+     */
     public Pelilauta() {
         peli = new toiminnallisuus.PelaaPeli();
         peli.asetaPelaajatPeliavarten();
     }
 
+    /**
+     * 
+     * @param ke
+     */
     public void keyTyped(KeyEvent ke) {
     }
 
+    /**
+     * 
+     * @param ke
+     */
     public void keyReleased(KeyEvent ke) {
     }
 
+    /**
+     * 
+     * @param ke
+     */
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == avainRed) {
             sijainninMuutos = peli.mikko.pylpyra.getNappulanSijainti(0) - i;
@@ -53,6 +72,10 @@ public class Pelilauta extends JPanel implements KeyListener {
         }
     }
 
+    /**
+     * 
+     * @param g
+     */
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.WHITE);
@@ -175,18 +198,30 @@ public class Pelilauta extends JPanel implements KeyListener {
 //        nopanKerroin = noppa.getNopanSilmaluku();
 //        return nopanKerroin;
 //    }
+    /**
+     * 
+     */
     public void palloLiikkuuOikealle() {
         rx += 60;
     }
 
+    /**
+     * 
+     */
     public void palloLiikkuuVasemmalle() {
         rx -= 60;
     }
 
+    /**
+     * 
+     */
     public void palloLiikkuuAlas() {
         ry += 60;
     }
 
+    /**
+     * 
+     */
     public void palloLiikkuuYlos() {
         ry -= 60;
     }

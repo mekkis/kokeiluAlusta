@@ -30,6 +30,10 @@ public class PeliNappula {
         pelaajanNappulanVari = lukija.nextLine();
     }
 
+    /**
+     * 
+     * @param vari
+     */
     public void setPelinappulanVari(String vari) {
         pelaajanNappulanVari = vari;
     }

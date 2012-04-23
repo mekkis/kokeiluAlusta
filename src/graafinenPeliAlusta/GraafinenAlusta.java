@@ -7,6 +7,10 @@ import javax.swing.*;
  */
 public class GraafinenAlusta {
 
+    /**
+     * 
+     * @param args
+     */
     public static void main(String[] args) {
         JFrame ikkuna = new JFrame();       //luo ikkunan
 

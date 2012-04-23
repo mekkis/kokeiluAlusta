@@ -18,9 +18,21 @@ public class PelaaPeli {
      * 
      */
     public String nappulanVari = "";
+    /**
+     * 
+     */
     public PeliKierros mikko = new PeliKierros();
+    /**
+     * 
+     */
     public PeliKierros tekoAlyVihrea = new PeliKierros();
+    /**
+     * 
+     */
     public PeliKierros tekoAlyKeltainen = new PeliKierros();
+    /**
+     * 
+     */
     public PeliKierros tekoAlySininen = new PeliKierros();
 
     /**
@@ -78,6 +90,9 @@ public class PelaaPeli {
         }
     }
 
+    /**
+     * 
+     */
     public void pelausGui() {
         System.out.println("\nKierros: " + kierros);
         if (mikko.olioPelaaKierroksensa() == true) {
@@ -95,27 +110,5 @@ public class PelaaPeli {
             kierros++;
         }
 
-
-        /*while (true) {
-        System.out.println("\nKierros: " + kierros);
-        if (mikko.olioPelaaKierroksensa() == true) {
-        System.out.println("Onnittelut voitit!");
-        break;
-        }
-        if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-        System.out.println("tekoAlyVihrea on voittanut!");
-        break;
-        }
-        if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
-        System.out.println("tekoAlyKeltainen on voittanut!");
-        break;
-        }
-        if (tekoAlySininen.olioPelaaKierroksensa() == true) {
-        System.out.println("tekoAlySininen on voittanut!");
-        break;
-        } else {
-        kierros++;
-        }
-        }*/
     }
 }
