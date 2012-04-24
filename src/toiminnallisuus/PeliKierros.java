@@ -33,14 +33,18 @@ public class PeliKierros {
         NopanHeitto heitto = new NopanHeitto();
         nopanSilmaluku = heitto.getNopanSilmaluku();
         if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 32) && nopanSilmaluku < 6) {
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 28) && nappulanNro < 5) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) == 0 || pylpyra.getNappulanSijainti(nappulanNro) > 28) && nappulanNro < 4) {
             uusiNappulaAloitusRuutuun();
-        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 || pylpyra.getNappulanSijainti(nappulanNro) < 33)) {
+        } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 && pylpyra.getNappulanSijainti(nappulanNro) < 33)) {
             siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
-            if (pelinappulaSamassaRuudussa() == true) {
+            /*if (pylpyra.getNappulanSijainti(nappulanNro) > 32) {
+                System.out.println("Heitit liian ison luvun, ei onnistu!");
+                siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
+            } else*/ if (pelinappulaSamassaRuudussa() == true) {
                 System.out.println("Parempi onni seuraavalla heitolla!");
                 siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
             }
+
         }
         if (nopanSilmaluku == 6) {
             pelaajaHeittaaNoppaaKerran();
@@ -104,7 +108,6 @@ public class PeliKierros {
             }
         }
         return false;
-
     }
 
     /**
@@ -146,7 +149,7 @@ public class PeliKierros {
     public boolean olioPelaaKierroksensa() {
         pelaajaHeittaaNoppaaKerran();
         nappuloidenTilanteenTulostus();
-        if (tarkistaMaaliinPaasy() == true && nappulanNro <= 4) {
+        if (tarkistaMaaliinPaasy() == true && nappulanNro < 4) {
             if (nappulanNro == 3) {
                 return true;
             } else {

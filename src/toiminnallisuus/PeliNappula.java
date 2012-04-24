@@ -77,7 +77,7 @@ public class PeliNappula {
      * @param nappulanNumero
      */
     public void liikutaTiettyaNappulaa(int nappulanNumero, int siirto) {
-        if (liike[nappulanNumero] + siirto > 31) {
+        if (liike[nappulanNumero] + siirto > 32) {
             liike[nappulanNumero] += 0;
         } else {
             liike[nappulanNumero] += siirto;

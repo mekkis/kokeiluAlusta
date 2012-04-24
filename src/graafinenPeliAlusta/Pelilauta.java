@@ -11,14 +11,17 @@ import javax.swing.JPanel;
  */
 public class Pelilauta extends JPanel implements KeyListener {
 
-    int avainRed;
+    int avainRed = 75;
     int lopeta;
     int rx = 0;
     int ry = 0;
+//    int rxb = 0;
+//    int ryb = 0;
     int i;
     int sijainninMuutos = 0;
     int[] reds;
     int k = 0;
+//    int kb = 0;
     toiminnallisuus.PelaaPeli peli;
 
     /**
@@ -48,10 +51,14 @@ public class Pelilauta extends JPanel implements KeyListener {
      * @param ke
      */
     public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == avainRed && k < 5) {
+        if (ke.getKeyCode() == lopeta) {
+            System.out.println("Lopetit pelin");
+            System.exit(0);
+        } else if (ke.getKeyCode() == avainRed && k < 4) {
+            peli.pelausGui();
             sijainninMuutos = peli.mikko.pylpyra.getNappulanSijainti(k) - i;
-            System.out.println("sijainninmuutos =" + sijainninMuutos);
-            System.out.println("siirtyma i=" + i);
+//            System.out.println("sijainninmuutos =" + sijainninMuutos);
+//            System.out.println("siirtyma i=" + i);
             for (i = 0; i < sijainninMuutos; i++) { //nappi siirtyy nopan verran
                 if (rx < 440 && ry == 0) {
                     palloLiikkuuOikealle();     //rx kasvaa ry vakio
@@ -68,11 +75,30 @@ public class Pelilauta extends JPanel implements KeyListener {
                     ry = 0;
                 }
             }
-            repaint();
-        } else if (ke.getKeyCode() == lopeta) {
-            System.out.println("Lopetit pelin");
+            //repaint();
+        } else {
             System.exit(0);
         }
+        /*
+        sijainninMuutos = peli.tekoAlySininen.pylpyra.getNappulanSijainti(k) - i;
+        System.out.println("sijainninmuutos sininen =" + sijainninMuutos);
+        System.out.println("siirtyma sin i=" + i);
+        for (i = 0; i < sijainninMuutos; i++) { //nappi siirtyy nopan verran
+        if (rxb == 480 && ryb < 410) {
+        palloLiikkuuAlas();         //ry kasvaa rx vakio
+        } else if (rxb > 80 && ryb == 420) {
+        palloLiikkuuVasemmalle();   //rx pienenee ry vakio
+        } else if (rxb == 60 && ryb > 60) {
+        palloLiikkuuYlos();         //rx vakio ry pienenee
+        } else if (rxb < 380 && ryb == 0) {
+        palloLiikkuuOikealle();     //rx kasvaa ry vakio
+        } else if (rxb < 260 && ryb > 0) {
+        palloLiikkuuAlas();         //ry kasvaa rx vakio
+        kb++;
+        rxb = 0;
+        ryb = 0;
+        }
+        }*/
     }
 
     /**
@@ -82,11 +108,6 @@ public class Pelilauta extends JPanel implements KeyListener {
     public void paint(Graphics g) {
         super.paint(g);
         g.setColor(Color.WHITE);
-        /*g.drawString("Pelaaja 1", 20, 20); // teksti
-        g.drawString("Pelaaja 2", 620, 20); // teksti
-        g.drawString("Pelaaja 3", 20, 560); // teksti
-        g.drawString("Pelaaja 4", 620, 560); // teksti*/
-//     g.drawOval(100,300, 20,20);    // soikio, keskipiste, leveys, korkeus 
         g.fillOval(140, 50, 50, 50);//vasen  
         g.fillOval(140, 110, 50, 50);
         g.fillOval(140, 170, 50, 50);
@@ -120,7 +141,7 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(500, 470, 50, 50);
 
         g.setColor(Color.LIGHT_GRAY);
-        g.drawString("pain k, heittaaksesi noppaa ", 280, 260);
+        g.drawString("paina k, heittaaksesi noppaa ", 280, 260);
         g.fillOval(200, 110, 50, 50);//maalit
         g.fillOval(260, 110, 50, 50);
         g.fillOval(320, 110, 50, 50);
@@ -161,18 +182,15 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.fillOval(620, 50, 50, 50);
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
+//        blueNappula(g);
 
         g.setColor(Color.RED);
-        g.fillOval(80, 50, 50, 50);
-        g.fillOval(20, 50, 50, 50);
-        g.fillOval(20, 110, 50, 50);
-        g.fillOval(80, 110, 50, 50);
         redSijainnit(g);
 
-        peli.pelausGui();
         redNappula(g);
         avainRed = KeyEvent.VK_K;
         lopeta = KeyEvent.VK_ESCAPE;
+//        peli.pelausGui();
     }
 
     private void redSijainnit(Graphics g) {
@@ -182,19 +200,18 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.drawString("red 4. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(3), 20, 225);
     }
 
-    private void greenSijainnit(Graphics g) {
+    private void blueSijainnit(Graphics g) {
         g.drawString("gre 1. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0), 620, 180);
         g.drawString("gre 2. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(1), 620, 195);
         g.drawString("gre 3. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(2), 620, 210);
         g.drawString("gre 4. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(3), 620, 225);
     }
 
-    private void blueSijainnit(Graphics g) {
+    private void greenSijainnit(Graphics g) {
         g.drawString("blu 1. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(0), 20, 540);
         g.drawString("blu 2. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(1), 20, 555);
         g.drawString("blu 3. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(2), 20, 570);
         g.drawString("blu 4. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(3), 20, 585);
-
     }
 
     private void yellowSijainnit(Graphics g) {
@@ -202,11 +219,15 @@ public class Pelilauta extends JPanel implements KeyListener {
         g.drawString("yel 2. sijainti" + peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(1), 620, 555);
         g.drawString("yel 3. sijainti" + peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(2), 620, 570);
         g.drawString("yel 4. sijainti" + peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(3), 620, 585);
-
     }
 
     private void redNappula(Graphics g) {
-        if (peli.mikko.pylpyra.getNappulanSijainti(0) > 0) {
+        if (peli.mikko.pylpyra.getNappulanSijainti(0) == 0) {
+            g.fillOval(80, 50, 50, 50);
+            g.fillOval(20, 50, 50, 50);
+            g.fillOval(20, 110, 50, 50);
+            g.fillOval(80, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(0) > 0) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
             g.fillOval(20, 50, 50, 50);
             g.fillOval(20, 110, 50, 50);
@@ -222,9 +243,29 @@ public class Pelilauta extends JPanel implements KeyListener {
         } else if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0 && peli.mikko.pylpyra.getNappulanSijainti(2) > 28
                 && peli.mikko.pylpyra.getNappulanSijainti(2) > 28 && peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(80 + rx, 50 + ry, 50, 50);
-        }
+        }repaint();
     }
 
+    /*private void blueNappula(Graphics g) {
+    if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) > 0) {
+    g.fillOval(560 + rx, 50 + ry, 50, 50);
+    g.fillOval(620, 50, 50, 50);
+    g.fillOval(620, 110, 50, 50);
+    g.fillOval(680, 110, 50, 50);
+    } else if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(1) > 0 && peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) > 28) {
+    g.fillOval(560 + rx, 50 + ry, 50, 50);
+    g.fillOval(620, 110, 50, 50);
+    g.fillOval(680, 110, 50, 50);
+    } else if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(2) > 0 && peli.tekoAlySininen.pylpyra.getNappulanSijainti(1) > 28
+    && peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) > 28) {
+    g.fillOval(560 + rx, 50 + ry, 50, 50);
+    g.fillOval(680, 110, 50, 50);
+    } else if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(3) > 0 && peli.tekoAlySininen.pylpyra.getNappulanSijainti(2) > 28
+    && peli.tekoAlySininen.pylpyra.getNappulanSijainti(2) > 28 && peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) > 28) {
+    g.fillOval(560 + rx, 50 + ry, 50, 50);
+    }
+    }
+     */
     private void palloLiikkuuOikealle() {
         rx += 60;
     }
