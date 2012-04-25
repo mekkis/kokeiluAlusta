@@ -14,7 +14,8 @@ public class GraafinenAlusta {
     public static void main(String[] args) {
         JFrame ikkuna = new JFrame();       //luo ikkunan
 
-        Pelilauta peli = new Pelilauta();             //luo pelin
+//        Pelilauta peli = new Pelilauta();             //luo pelin
+        PelilautaSimple peli = new PelilautaSimple();             //luo pelin
         peli.setBackground(Color.BLACK);    //pelin tausta musta
 
         Container sisalto = ikkuna.getContentPane();
