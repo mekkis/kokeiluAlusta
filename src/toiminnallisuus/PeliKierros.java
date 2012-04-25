@@ -37,10 +37,10 @@ public class PeliKierros {
             uusiNappulaAloitusRuutuun();
         } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 && pylpyra.getNappulanSijainti(nappulanNro) < 33)) {
             siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
-            /*if (pylpyra.getNappulanSijainti(nappulanNro) > 32) {
+            if (pylpyra.getNappulanSijainti(nappulanNro) > 32) {
                 System.out.println("Heitit liian ison luvun, ei onnistu!");
                 siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
-            } else*/ if (pelinappulaSamassaRuudussa() == true) {
+            } else if (pelinappulaSamassaRuudussa() == true) {
                 System.out.println("Parempi onni seuraavalla heitolla!");
                 siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
             }
