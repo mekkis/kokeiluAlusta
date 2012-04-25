@@ -96,7 +96,7 @@ public class PelilautaSimple extends JPanel implements KeyListener {
 
         g.setColor(Color.LIGHT_GRAY);
         voittoTeksti(g);
-        
+
         g.fillOval(200, 110, 50, 50);//maalit
         g.fillOval(260, 110, 50, 50);
         g.fillOval(320, 110, 50, 50);
@@ -138,16 +138,15 @@ public class PelilautaSimple extends JPanel implements KeyListener {
     }
 
     private void voittoTeksti(Graphics g) {
-
         if (peli.mikko.olioPelaaKierroksensa() == true) {
-            g.drawString("VOITIT ", 280, 260);
+            g.drawString("VOITIT", 300, 260);
         } else if (peli.tekoAlyKeltainen.olioPelaaKierroksensa() == true
                 || peli.tekoAlySininen.olioPelaaKierroksensa() == true
                 || peli.tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-            g.drawString("HÄVISIT ", 280, 260);
-        } else {
-            g.drawString("paina k, heittaaksesi noppaa ", 280, 260);
+            g.drawString("HÄVISIT ", 300, 260);
         }
+        g.drawString("paina k, heittaaksesi noppaa ", 200, 540);
+        g.drawString("Sulje peli painamalla ESC ", 200, 555);
 
     }
 
@@ -159,17 +158,17 @@ public class PelilautaSimple extends JPanel implements KeyListener {
     }
 
     private void blueSijainnit(Graphics g) {
-        g.drawString("gre 1. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(0), 620, 180);
-        g.drawString("gre 2. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(1), 620, 195);
-        g.drawString("gre 3. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(2), 620, 210);
-        g.drawString("gre 4. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(3), 620, 225);
+        g.drawString("blu 1. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(0), 620, 180);
+        g.drawString("blu 2. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(1), 620, 195);
+        g.drawString("blu 3. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(2), 620, 210);
+        g.drawString("blu 4. sijainti" + peli.tekoAlySininen.pylpyra.getNappulanSijainti(3), 620, 225);
     }
 
     private void greenSijainnit(Graphics g) {
-        g.drawString("blu 1. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0), 20, 540);
-        g.drawString("blu 2. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(1), 20, 555);
-        g.drawString("blu 3. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(2), 20, 570);
-        g.drawString("blu 4. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(3), 20, 585);
+        g.drawString("gre 1. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0), 20, 540);
+        g.drawString("gre 2. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(1), 20, 555);
+        g.drawString("gre 3. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(2), 20, 570);
+        g.drawString("gre 4. sijainti" + peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(3), 20, 585);
     }
 
     private void yellowSijainnit(Graphics g) {
