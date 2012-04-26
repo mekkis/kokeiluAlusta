@@ -15,9 +15,7 @@ public class GraafinenAlusta {
      * @param args
      */
     public static void main(String[] args) {
-        JFrame ikkuna = new JFrame();       //luo ikkunan
-
-//        Pelilauta peli = new Pelilauta();             //luo pelin
+        JFrame ikkuna = new JFrame("kimble");       //luo ikkunan
         PelilautaSimple peli = new PelilautaSimple();             //luo pelin
         peli.setBackground(Color.BLACK);    //pelin tausta musta
 
@@ -36,8 +34,6 @@ public class GraafinenAlusta {
         peli.add(exit);
 
         sisalto.add(peli);
-        ikkuna.setTitle("kimble");
-//        ikkuna.addKeyListener(peli);
         ikkuna.setSize(750, 660);           //ikkunan koko
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);            //aja nakyviin

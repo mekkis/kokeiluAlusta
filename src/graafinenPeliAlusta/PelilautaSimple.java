@@ -90,7 +90,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.fillOval(20, 410, 50, 50);
         g.fillOval(20, 470, 50, 50);
         g.fillOval(80, 470, 50, 50);
-        greenSijainnit(g);
         kiertavienMaalausGreen(g);
         greenNappula(g);
 
@@ -99,7 +98,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.fillOval(620, 410, 50, 50);
         g.fillOval(620, 470, 50, 50);
         g.fillOval(680, 470, 50, 50);
-        yellowSijainnit(g);
         kiertavienMaalausYellow(g);
         yellowNappula(g);
 
@@ -108,7 +106,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.fillOval(620, 50, 50, 50);
         g.fillOval(620, 110, 50, 50);
         g.fillOval(680, 110, 50, 50);
-        blueSijainnit(g);
         kiertavienMaalausBlue(g);
         blueNappula(g);
 
@@ -117,7 +114,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.fillOval(20, 50, 50, 50);
         g.fillOval(20, 110, 50, 50);
         g.fillOval(80, 110, 50, 50);
-        redSijainnit(g);
         kiertavienMaalausRed(g);
         redNappula(g);
 
@@ -419,14 +415,14 @@ public class PelilautaSimple extends JPanel implements ActionListener {
                 || peli.tekoAlySininen.olioPelaaKierroksensa() == true
                 || peli.tekoAlyVihrea.olioPelaaKierroksensa() == true) {
             g.drawString("HAVISIT ", 300, 260);
-            repaint();
+            
         }
         g.drawString("pun heitti nopasta: " + peli.mikko.nopanSilmaluku, 200, 570);
         g.drawString("kel heitti nopasta: " + peli.tekoAlyKeltainen.nopanSilmaluku, 200, 585);
         g.drawString("vih heitti nopasta: " + peli.tekoAlyVihrea.nopanSilmaluku, 200, 600);
         g.drawString("sin heitti nopasta: " + peli.tekoAlySininen.nopanSilmaluku, 200, 615);
     }
-
+/*
     private void redSijainnit(Graphics g) {
         g.drawString("red 1. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(0), 20, 180);
         g.drawString("red 2. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(1), 20, 195);
@@ -454,7 +450,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.drawString("yel 3. sijainti" + peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(2), 620, 570);
         g.drawString("yel 4. sijainti" + peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(3), 620, 585);
     }
-
+*/
     private void redNappula(Graphics g) {
         if (peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(200, 110, 50, 50);
