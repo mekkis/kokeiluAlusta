@@ -203,7 +203,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void redNappula(Graphics g) {
-        if (peli.mikko.pylpyra.getNappulanSijainti(0) < 29) {
+        if (peli.mikko.pylpyra.getNappulanSijainti(0) < 1) {
             g.fillOval(80, 50, 50, 50);
             g.fillOval(20, 50, 50, 50);
             g.fillOval(20, 110, 50, 50);
@@ -234,7 +234,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void blueNappula(Graphics g) {
-        if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) < 29) {
+        if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) < 1) {
             g.fillOval(680, 50, 50, 50);
             g.fillOval(620, 50, 50, 50);
             g.fillOval(620, 110, 50, 50);
@@ -261,7 +261,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void yellowNappula(Graphics g) {
-        if (peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(0) < 29) {
+        if (peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(0) < 1) {
             g.fillOval(680, 410, 50, 50);//oikeaala pelaaja
             g.fillOval(620, 410, 50, 50);
             g.fillOval(620, 470, 50, 50);
@@ -288,7 +288,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void greenNappula(Graphics g) {
-        if (peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0) < 29) {
+        if (peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0) < 1) {
             g.fillOval(80, 410, 50, 50);//vasenala pelaaja
             g.fillOval(20, 410, 50, 50);
             g.fillOval(20, 470, 50, 50);

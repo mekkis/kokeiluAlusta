@@ -1,13 +1,14 @@
 package graafinenPeliAlusta;
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 
 /**
  * 
  * @author mikakekalainen
  */
-public class GraafinenAlusta{
+public class GraafinenAlusta {
 
     /**
      * Graafinen pelialusta
@@ -21,10 +22,19 @@ public class GraafinenAlusta{
         peli.setBackground(Color.BLACK);    //pelin tausta musta
 
         Container sisalto = ikkuna.getContentPane();
-        JButton noppa = new JButton("noppa"); 
+        JButton noppa = new JButton("noppa");
+        JButton exit = new JButton("exit");
         noppa.addActionListener(peli);
         peli.add(noppa);
-        
+        exit.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.exit(0);
+            }
+        });
+        peli.add(exit);
+
         sisalto.add(peli);
         ikkuna.setTitle("kimble");
 //        ikkuna.addKeyListener(peli);
@@ -32,5 +42,4 @@ public class GraafinenAlusta{
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);            //aja nakyviin
     }
-    }
-
+}
