@@ -1,15 +1,14 @@
 package graafinenPeliAlusta;
 
-import java.awt.Color;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.*;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 /**
  * 
  * @author mikakekalainen
  */
-public class PelilautaSimple extends JPanel implements KeyListener {
+public class PelilautaSimple extends JPanel implements ActionListener {
 
     int avainRed = 75;
     int lopeta;
@@ -29,31 +28,31 @@ public class PelilautaSimple extends JPanel implements KeyListener {
      * 
      * @param ke
      */
-    public void keyTyped(KeyEvent ke) {
+    /*    public void keyTyped(KeyEvent ke) {
     }
-
+     */
     /**
      * 
      * @param ke
      */
-    public void keyReleased(KeyEvent ke) {
+    /*    public void keyReleased(KeyEvent ke) {
     }
-
+     */
     /**
      * Tutkii painetun kirjaimen mukaan, mita seuraavaksi pelissa tapahtuu
      * @param ke
      */
-    public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == lopeta) {
-            System.exit(0);
-        } else if (ke.getKeyCode() == avainRed) {
-            peli.pelausGui();
-            repaint();
-        } else {
-            System.exit(0);
-        }
+    /*    public void keyPressed(KeyEvent ke) {
+    if (ke.getKeyCode() == lopeta) {
+    System.exit(0);
+    } else if (ke.getKeyCode() == avainRed) {
+    peli.pelausGui();
+    repaint();
+    } else {
+    System.exit(0);
     }
-
+    }
+     */
     /**
      * pelilaudan grafiikka
      * @param g
@@ -209,7 +208,7 @@ public class PelilautaSimple extends JPanel implements KeyListener {
 
     }
 
-    private void blueNappula(Graphics g) {        
+    private void blueNappula(Graphics g) {
 //        g.drawString("" + peli.tekoAlySininen.nopanSilmaluku, 375, 275);
         if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(680, 50, 50, 50);
@@ -291,5 +290,11 @@ public class PelilautaSimple extends JPanel implements KeyListener {
             g.fillOval(200, 350, 50, 50);
             g.fillOval(200, 410, 50, 50);
         }
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        peli.pelausGui();
+        repaint();
     }
 }
