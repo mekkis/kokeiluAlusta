@@ -12,6 +12,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
 
     toiminnallisuus.PelaaPeli peli;
     int i;
+
     /**
      * 
      */
@@ -94,9 +95,27 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         blueNappula(g);
 
         g.setColor(Color.RED);
+        g.fillOval(80, 50, 50, 50);
+        g.fillOval(20, 50, 50, 50);
+        g.fillOval(20, 110, 50, 50);
+        g.fillOval(80, 110, 50, 50);
         redSijainnit(g);
         kiertavienMaalaus(g);
         redNappula(g);
+
+        g.setColor(Color.LIGHT_GRAY);
+        if (peli.mikko.pylpyra.getNappulanSijainti(0) > 0) {
+            g.fillOval(80, 50, 50, 50);
+        }
+        if (peli.mikko.pylpyra.getNappulanSijainti(1) > 0) {
+            g.fillOval(20, 50, 50, 50);
+        }
+        if (peli.mikko.pylpyra.getNappulanSijainti(2) > 0) {
+            g.fillOval(20, 110, 50, 50);
+        }
+        if (peli.mikko.pylpyra.getNappulanSijainti(3) > 0) {
+            g.fillOval(80, 110, 50, 50);
+        }
     }
 
     private void kiertavienMaalaus(Graphics g) {
@@ -156,6 +175,14 @@ public class PelilautaSimple extends JPanel implements ActionListener {
             g.fillOval(140, 170, 50, 50);
         } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 28) {
             g.fillOval(140, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 29) {
+            g.fillOval(200, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 30) {
+            g.fillOval(260, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 31) {
+            g.fillOval(320, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 32) {
+            g.fillOval(380, 110, 50, 50);
         }
     }
 
@@ -203,32 +230,52 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void redNappula(Graphics g) {
-        if (peli.mikko.pylpyra.getNappulanSijainti(0) < 1) {
-            g.fillOval(80, 50, 50, 50);
-            g.fillOval(20, 50, 50, 50);
-            g.fillOval(20, 110, 50, 50);
-            g.fillOval(80, 110, 50, 50);
-        }
         if (peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
-            g.fillOval(200, 110, 50, 50);
+            if (peli.mikko.pylpyra.getNappulanSijainti(0) == 29) {
+                g.fillOval(200, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(0) == 30) {
+                g.fillOval(260, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(0) == 31) {
+                g.fillOval(320, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(0) == 32) {
+                g.fillOval(380, 110, 50, 50);
+            }
             i = 1;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(1) > 28) {
-            g.fillOval(200, 110, 50, 50);
-            g.fillOval(260, 110, 50, 50);
+            if (peli.mikko.pylpyra.getNappulanSijainti(1) == 29) {
+                g.fillOval(200, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(1) == 30) {
+                g.fillOval(260, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(1) == 31) {
+                g.fillOval(320, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(1) == 32) {
+                g.fillOval(380, 110, 50, 50);
+            }
             i = 2;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(2) > 28) {
-            g.fillOval(200, 110, 50, 50);
-            g.fillOval(260, 110, 50, 50);
-            g.fillOval(320, 110, 50, 50);
+            if (peli.mikko.pylpyra.getNappulanSijainti(2) == 29) {
+                g.fillOval(200, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(2) == 30) {
+                g.fillOval(260, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(2) == 31) {
+                g.fillOval(320, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(2) == 32) {
+                g.fillOval(380, 110, 50, 50);
+            }
             i = 3;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(3) > 28) {
-            g.fillOval(200, 110, 50, 50);
-            g.fillOval(260, 110, 50, 50);
-            g.fillOval(320, 110, 50, 50);
-            g.fillOval(380, 110, 50, 50);
+            if (peli.mikko.pylpyra.getNappulanSijainti(3) == 29) {
+                g.fillOval(200, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(3) == 30) {
+                g.fillOval(260, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(3) == 31) {
+                g.fillOval(320, 110, 50, 50);
+            } else if (peli.mikko.pylpyra.getNappulanSijainti(3) == 32) {
+                g.fillOval(380, 110, 50, 50);
+            }
         }
 
     }
