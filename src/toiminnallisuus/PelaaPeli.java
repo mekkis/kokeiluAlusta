@@ -25,7 +25,7 @@ public class PelaaPeli {
      * kierrosten alustus
      */
     public PelaaPeli() {
-        System.out.println("Tervetuloa pelaamaan kimblea!");
+//        System.out.println("Tervetuloa pelaamaan kimblea!");
         kierros = 1;
     }
 
@@ -79,18 +79,18 @@ public class PelaaPeli {
      * Lisataan pelaajat, valitaan pelinappuloiden vari ja aletaan heittaa noppaa
      */
     public void pelausGui() {
-        System.out.println("\nKierros: " + kierros);
+//        System.out.println("\nKierros: " + kierros);
         if (mikko.olioPelaaKierroksensa() == true) {
-            System.out.println("Onnittelut voitit!");
+//            System.out.println("Onnittelut voitit!");
         }
         else if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-            System.out.println("tekoAlyVihrea on voittanut!");
+//            System.out.println("tekoAlyVihrea on voittanut!");
         }
         else if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
-            System.out.println("tekoAlyKeltainen on voittanut!");
+//            System.out.println("tekoAlyKeltainen on voittanut!");
         }
         else if (tekoAlySininen.olioPelaaKierroksensa() == true) {
-            System.out.println("tekoAlySininen on voittanut!");
+//            System.out.println("tekoAlySininen on voittanut!");
         } else {
             kierros++;
         }

@@ -45,7 +45,6 @@ public class PelilautaSimple extends JPanel implements KeyListener {
      */
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == lopeta) {
-            System.out.println("Lopetit pelin");
             System.exit(0);
         } else if (ke.getKeyCode() == avainRed) {
             peli.pelausGui();

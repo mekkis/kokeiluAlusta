@@ -38,10 +38,10 @@ public class PeliKierros {
         } else if ((pylpyra.getNappulanSijainti(nappulanNro) > 0 && pylpyra.getNappulanSijainti(nappulanNro) < 33)) {
             siirraNappulaaNopanLukemanVerran(nappulanNro, nopanSilmaluku);
             if (pylpyra.getNappulanSijainti(nappulanNro) > 32) {
-                System.out.println("Heitit liian ison luvun, ei onnistu!");
+//                System.out.println("Heitit liian ison luvun, ei onnistu!");
                 siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
             } else if (pelinappulaSamassaRuudussa() == true) {
-                System.out.println("Parempi onni seuraavalla heitolla!");
+//                System.out.println("Parempi onni seuraavalla heitolla!");
                 siirraNappulaaNopanLukemanVerran(nappulanNro, -nopanSilmaluku);
             }
 
@@ -129,7 +129,7 @@ public class PeliKierros {
     public boolean tarkistaMaaliinPaasy() {
         int numerointiNappuloille = nappulanNro + 1;
         if (pylpyra.getNappulanSijainti(nappulanNro) > 28 && pylpyra.getNappulanSijainti(nappulanNro) < 33) {
-            System.out.println("Pelaajan " + this.nappulanVari + " nappula" + numerointiNappuloille + " on paassyt maaliin");
+//            System.out.println("Pelaajan " + this.nappulanVari + " nappula" + numerointiNappuloille + " on paassyt maaliin");
             return true;
         } else {
             return false;
@@ -148,7 +148,7 @@ public class PeliKierros {
      */
     public boolean olioPelaaKierroksensa() {
         pelaajaHeittaaNoppaaKerran();
-        nappuloidenTilanteenTulostus();
+//        nappuloidenTilanteenTulostus();
         if (tarkistaMaaliinPaasy() == true && nappulanNro < 4) {
             if (nappulanNro == 3) {
                 return true;
