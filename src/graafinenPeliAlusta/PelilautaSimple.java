@@ -10,12 +10,8 @@ import javax.swing.*;
  */
 public class PelilautaSimple extends JPanel implements ActionListener {
 
-    int avainRed = 75;
-    int lopeta;
-    int i;
-    int[] reds;
     toiminnallisuus.PelaaPeli peli;
-
+    int i;
     /**
      * 
      */
@@ -24,35 +20,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         peli.asetaPelaajatPeliavarten();
     }
 
-    /**
-     * 
-     * @param ke
-     */
-    /*    public void keyTyped(KeyEvent ke) {
-    }
-     */
-    /**
-     * 
-     * @param ke
-     */
-    /*    public void keyReleased(KeyEvent ke) {
-    }
-     */
-    /**
-     * Tutkii painetun kirjaimen mukaan, mita seuraavaksi pelissa tapahtuu
-     * @param ke
-     */
-    /*    public void keyPressed(KeyEvent ke) {
-    if (ke.getKeyCode() == lopeta) {
-    System.exit(0);
-    } else if (ke.getKeyCode() == avainRed) {
-    peli.pelausGui();
-    repaint();
-    } else {
-    System.exit(0);
-    }
-    }
-     */
     /**
      * pelilaudan grafiikka
      * @param g
@@ -128,10 +95,68 @@ public class PelilautaSimple extends JPanel implements ActionListener {
 
         g.setColor(Color.RED);
         redSijainnit(g);
+        kiertavienMaalaus(g);
         redNappula(g);
+    }
 
-        avainRed = KeyEvent.VK_K;
-        lopeta = KeyEvent.VK_ESCAPE;
+    private void kiertavienMaalaus(Graphics g) {
+        if (peli.mikko.pylpyra.getNappulanSijainti(i) == 1) {
+            g.fillOval(140, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 2) {
+            g.fillOval(200, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 3) {
+            g.fillOval(260, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 4) {
+            g.fillOval(320, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 5) {
+            g.fillOval(380, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 6) {
+            g.fillOval(440, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 7) {
+            g.fillOval(500, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 8) {
+            g.fillOval(560, 50, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 9) {
+            g.fillOval(560, 110, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 10) {
+            g.fillOval(560, 170, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 11) {
+            g.fillOval(560, 230, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 12) {
+            g.fillOval(560, 290, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 13) {
+            g.fillOval(560, 350, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 14) {
+            g.fillOval(560, 410, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 15) {
+            g.fillOval(560, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 16) {
+            g.fillOval(200, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 17) {
+            g.fillOval(260, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 18) {
+            g.fillOval(320, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 19) {
+            g.fillOval(380, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 20) {
+            g.fillOval(440, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 21) {
+            g.fillOval(500, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 22) {
+            g.fillOval(140, 470, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 23) {
+            g.fillOval(140, 410, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 24) {
+            g.fillOval(140, 350, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 25) {
+            g.fillOval(140, 290, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 26) {
+            g.fillOval(140, 230, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 27) {
+            g.fillOval(140, 170, 50, 50);
+        } else if (peli.mikko.pylpyra.getNappulanSijainti(i) == 28) {
+            g.fillOval(140, 110, 50, 50);
+        }
     }
 
     private void voittoTeksti(Graphics g) {
@@ -140,10 +165,8 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         } else if (peli.tekoAlyKeltainen.olioPelaaKierroksensa() == true
                 || peli.tekoAlySininen.olioPelaaKierroksensa() == true
                 || peli.tekoAlyVihrea.olioPelaaKierroksensa() == true) {
-            g.drawString("HÄVISIT ", 300, 260);
+            g.drawString("HAVISIT ", 300, 260);
         }
-        g.drawString("paina k, heittaaksesi noppaa ", 200, 540);
-        g.drawString("Sulje peli painamalla ESC ", 200, 555);
         g.drawString("pun heitti nopasta: " + peli.mikko.nopanSilmaluku, 200, 570);
         g.drawString("kel heitti nopasta: " + peli.tekoAlyKeltainen.nopanSilmaluku, 200, 585);
         g.drawString("vih heitti nopasta: " + peli.tekoAlyVihrea.nopanSilmaluku, 200, 600);
@@ -180,7 +203,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void redNappula(Graphics g) {
-//        g.drawString("" + peli.mikko.nopanSilmaluku, 375, 275);
         if (peli.mikko.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(80, 50, 50, 50);
             g.fillOval(20, 50, 50, 50);
@@ -189,15 +211,18 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(0) > 28) {
             g.fillOval(200, 110, 50, 50);
+            i = 1;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(1) > 28) {
             g.fillOval(200, 110, 50, 50);
             g.fillOval(260, 110, 50, 50);
+            i = 2;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(2) > 28) {
             g.fillOval(200, 110, 50, 50);
             g.fillOval(260, 110, 50, 50);
             g.fillOval(320, 110, 50, 50);
+            i = 3;
         }
         if (peli.mikko.pylpyra.getNappulanSijainti(3) > 28) {
             g.fillOval(200, 110, 50, 50);
@@ -209,7 +234,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void blueNappula(Graphics g) {
-//        g.drawString("" + peli.tekoAlySininen.nopanSilmaluku, 375, 275);
         if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(680, 50, 50, 50);
             g.fillOval(620, 50, 50, 50);
@@ -237,7 +261,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void yellowNappula(Graphics g) {
-//        g.drawString("" + peli.tekoAlyKeltainen.nopanSilmaluku, 375, 275);
         if (peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(680, 410, 50, 50);//oikeaala pelaaja
             g.fillOval(620, 410, 50, 50);
@@ -265,7 +288,6 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     }
 
     private void greenNappula(Graphics g) {
-//        g.drawString("" + peli.tekoAlyVihrea.nopanSilmaluku, 375, 275);
         if (peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(80, 410, 50, 50);//vasenala pelaaja
             g.fillOval(20, 410, 50, 50);
