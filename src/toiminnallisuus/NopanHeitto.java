@@ -8,7 +8,7 @@ import java.util.Random;
  * @author mikakekalainen
  */
 public class NopanHeitto {
-
+    int nopastaSaatavaLukema;
     /**
      * Heittää noppaa
      * @return kokonaisluku välillä 1..6
@@ -16,8 +16,8 @@ public class NopanHeitto {
     public int getNopanSilmaluku() {
 //        System.out.print("Heitetaan noppaa..");
         Random arpoja = new Random();
-        int indeksi = arpoja.nextInt(6) + 1;
-//        System.out.println("Nopasta tuli: " + indeksi);
-        return indeksi;
+        nopastaSaatavaLukema = arpoja.nextInt(6) + 1;
+//        System.out.println("Nopasta tuli: " + nopastaSaatavaLukema);
+        return nopastaSaatavaLukema;
     }
 }

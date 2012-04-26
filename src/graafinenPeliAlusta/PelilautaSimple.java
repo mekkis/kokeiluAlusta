@@ -95,7 +95,6 @@ public class PelilautaSimple extends JPanel implements KeyListener {
 
         g.setColor(Color.LIGHT_GRAY);
         voittoTeksti(g);
-
         g.fillOval(200, 110, 50, 50);//maalit
         g.fillOval(260, 110, 50, 50);
         g.fillOval(320, 110, 50, 50);
@@ -146,6 +145,10 @@ public class PelilautaSimple extends JPanel implements KeyListener {
         }
         g.drawString("paina k, heittaaksesi noppaa ", 200, 540);
         g.drawString("Sulje peli painamalla ESC ", 200, 555);
+        g.drawString("pun heitti nopasta: " + peli.mikko.nopanSilmaluku, 200, 570);
+        g.drawString("kel heitti nopasta: " + peli.tekoAlyKeltainen.nopanSilmaluku, 200, 585);
+        g.drawString("vih heitti nopasta: " + peli.tekoAlyVihrea.nopanSilmaluku, 200, 600);
+        g.drawString("sin heitti nopasta: " + peli.tekoAlySininen.nopanSilmaluku, 200, 615);
 
     }
 
@@ -178,6 +181,7 @@ public class PelilautaSimple extends JPanel implements KeyListener {
     }
 
     private void redNappula(Graphics g) {
+//        g.drawString("" + peli.mikko.nopanSilmaluku, 375, 275);
         if (peli.mikko.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(80, 50, 50, 50);
             g.fillOval(20, 50, 50, 50);
@@ -202,9 +206,11 @@ public class PelilautaSimple extends JPanel implements KeyListener {
             g.fillOval(320, 110, 50, 50);
             g.fillOval(380, 110, 50, 50);
         }
+
     }
 
-    private void blueNappula(Graphics g) {
+    private void blueNappula(Graphics g) {        
+//        g.drawString("" + peli.tekoAlySininen.nopanSilmaluku, 375, 275);
         if (peli.tekoAlySininen.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(680, 50, 50, 50);
             g.fillOval(620, 50, 50, 50);
@@ -232,6 +238,7 @@ public class PelilautaSimple extends JPanel implements KeyListener {
     }
 
     private void yellowNappula(Graphics g) {
+//        g.drawString("" + peli.tekoAlyKeltainen.nopanSilmaluku, 375, 275);
         if (peli.tekoAlyKeltainen.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(680, 410, 50, 50);//oikeaala pelaaja
             g.fillOval(620, 410, 50, 50);
@@ -259,6 +266,7 @@ public class PelilautaSimple extends JPanel implements KeyListener {
     }
 
     private void greenNappula(Graphics g) {
+//        g.drawString("" + peli.tekoAlyVihrea.nopanSilmaluku, 375, 275);
         if (peli.tekoAlyVihrea.pylpyra.getNappulanSijainti(0) < 29) {
             g.fillOval(80, 410, 50, 50);//vasenala pelaaja
             g.fillOval(20, 410, 50, 50);
