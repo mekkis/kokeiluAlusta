@@ -46,9 +46,11 @@ public class PeliKierros {
             }
 
         }
-        if (nopanSilmaluku == 6) {
-            pelaajaHeittaaNoppaaKerran();
-        }
+        //Alla oleva if -rakenne tuottaa ominaisuuden, jolla saadaan uusi heitto kuutosella.
+        //Koska GUI:n toiminta on selkeampaa ilman ehtoa, niin jatan sen pois.
+//        if (nopanSilmaluku == 6) {
+//            pelaajaHeittaaNoppaaKerran();
+//        }
         // kehitys joka jäänee suorittamatta
         /* else if ((pylpyra.getNappulanSijainti(m) > 0 || pylpyra.getNappulanSijainti(m) < 27) && nopanSilmaluku == 6) {
         useitaNappuloitaPeliin();
