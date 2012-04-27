@@ -416,12 +416,12 @@ public class PelilautaSimple extends JPanel implements ActionListener {
                 || peli.tekoAlyVihrea.olioPelaaKierroksensa() == true) {
             g.drawString("HAVISIT ", 300, 260);
             
-        }
+        }/* nopasta saatava tulos pelaajittain
         g.drawString("pun heitti nopasta: " + peli.mikko.nopanSilmaluku, 200, 570);
         g.drawString("kel heitti nopasta: " + peli.tekoAlyKeltainen.nopanSilmaluku, 200, 585);
         g.drawString("vih heitti nopasta: " + peli.tekoAlyVihrea.nopanSilmaluku, 200, 600);
         g.drawString("sin heitti nopasta: " + peli.tekoAlySininen.nopanSilmaluku, 200, 615);
-    }
+    */}
 /*  //Nappuloiden sijaintitietoa graafiseen käyttöliittymään tarvittaessa
     private void redSijainnit(Graphics g) {
         g.drawString("red 1. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(0), 20, 180);
