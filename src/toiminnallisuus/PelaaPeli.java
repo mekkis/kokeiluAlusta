@@ -12,13 +12,9 @@ public class PelaaPeli {
     String vastaus = "k";
     public int kierros;
     public String nappulanVari = "";
-   
     public PeliKierros mikko = new PeliKierros();
-    
     public PeliKierros tekoAlyVihrea = new PeliKierros();
-    
     public PeliKierros tekoAlyKeltainen = new PeliKierros();
-    
     public PeliKierros tekoAlySininen = new PeliKierros();
 
     /**
@@ -82,14 +78,11 @@ public class PelaaPeli {
 //        System.out.println("\nKierros: " + kierros);
         if (mikko.olioPelaaKierroksensa() == true) {
 //            System.out.println("Onnittelut voitit!");
-        }
-        else if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
+        } else if (tekoAlyVihrea.olioPelaaKierroksensa() == true) {
 //            System.out.println("tekoAlyVihrea on voittanut!");
-        }
-        else if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
+        } else if (tekoAlyKeltainen.olioPelaaKierroksensa() == true) {
 //            System.out.println("tekoAlyKeltainen on voittanut!");
-        }
-        else if (tekoAlySininen.olioPelaaKierroksensa() == true) {
+        } else if (tekoAlySininen.olioPelaaKierroksensa() == true) {
 //            System.out.println("tekoAlySininen on voittanut!");
         } else {
             kierros++;

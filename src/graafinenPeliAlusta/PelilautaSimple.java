@@ -546,4 +546,5 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         peli.pelausGui();
         repaint();
     }
+    
 }

@@ -13,7 +13,7 @@ public class PeliKierros {
     public PeliNappula pylpyra = new PeliNappula("");
     public String nappulanVari = "";
     public int nappulanNro = 0;
-    int s;
+    int nappulanNumero;
 
     /**
      * alustetaan pelaaja
@@ -117,9 +117,9 @@ public class PeliKierros {
      */
     public void nappuloidenTilanteenTulostus() {
         System.out.print(this.nappulanVari + " nappuloiden sijainti: ");
-        for (s = 0; s < 4; s++) {
+        for (nappulanNumero = 0; nappulanNumero < 4; nappulanNumero++) {
             int[] lista = pylpyra.getNappuloidenSijainnit();
-            System.out.print(lista[s] + " ");
+            System.out.print(lista[nappulanNumero] + " ");
         }
         System.out.println("");
     }
@@ -129,7 +129,7 @@ public class PeliKierros {
      * @return boolean
      */
     public boolean tarkistaMaaliinPaasy() {
-        int numerointiNappuloille = nappulanNro + 1;
+//        int numerointiNappuloille = nappulanNro + 1;
         if (pylpyra.getNappulanSijainti(nappulanNro) > 28 && pylpyra.getNappulanSijainti(nappulanNro) < 33) {
 //            System.out.println("Pelaajan " + this.nappulanVari + " nappula" + numerointiNappuloille + " on paassyt maaliin");
             return true;
