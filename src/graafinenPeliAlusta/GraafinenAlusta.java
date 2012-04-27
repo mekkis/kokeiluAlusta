@@ -34,7 +34,7 @@ public class GraafinenAlusta {
         peli.add(exit);
 
         sisalto.add(peli);
-        ikkuna.setSize(750, 660);           //ikkunan koko
+        ikkuna.setSize(750, 600);           //ikkunan koko
         ikkuna.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         ikkuna.setVisible(true);            //aja nakyviin
     }
