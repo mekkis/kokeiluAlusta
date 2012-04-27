@@ -1,9 +1,5 @@
 package toiminnallisuusTesteja;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -39,12 +35,7 @@ public class nopanHeittoTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-
+    
     @Test
     public void nopanlukuAlleSeitsemanTest() {
         assertTrue(luku < 7);

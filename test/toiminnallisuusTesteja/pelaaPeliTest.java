@@ -1,9 +1,5 @@
 package toiminnallisuusTesteja;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,10 +33,7 @@ public class pelaaPeliTest {
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-
+   
     @Test
     public void pelaaPeliIndeksiTesti() {
         int indeksi = kekkonen.kierros;
@@ -59,7 +52,8 @@ public class pelaaPeliTest {
     }
 
     @Test
-    public void nappulanVariAluksiTyhjaTest() {
-        assertTrue(kekkonen.nappulanVari.isEmpty());
+    public void asetetullaTekoAlyllaOnVariTest() {
+        kekkonen.asetaPelaajatPeliavarten();
+        assertTrue(kekkonen.tekoAlyKeltainen.pylpyra.getPeliNappulanVari().equals("keltainen"));
     }
 }

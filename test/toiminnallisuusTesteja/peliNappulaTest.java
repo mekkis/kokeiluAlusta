@@ -1,9 +1,5 @@
 package toiminnallisuusTesteja;
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -43,19 +39,6 @@ public class peliNappulaTest {
         assertTrue(4 + 2 == 6);
     }
 
-    /*@Test
-    public void samatOliotBooleanTesti() { //EI TOIMI
-    PeliNappula A = new PeliNappula("red");
-    PeliNappula B = new PeliNappula("red");
-    assertTrue(A.equals(B));
-    }
-    
-    @Test
-    public void samatOliotEqualsTesti() {   //EI TOIMI
-    PeliNappula AA = new PeliNappula("red");
-    PeliNappula BB = new PeliNappula("red");
-    assertEquals(AA, BB);
-    }*/
     @Test
     public void lisaaPelinappulaTest() {
         silinteri.lisaaPelinappula("Testi-teppo", "donerkebap");
