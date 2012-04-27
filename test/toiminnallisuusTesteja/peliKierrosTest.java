@@ -69,6 +69,9 @@ public class peliKierrosTest {
         assertFalse(eka.olioPelaaKierroksensa());
     }
 
+    /**
+     * 
+     */
     @Test
     public void pelaajaHeittaaNoppaaKerranJaSaaPositiivisenLuvunTest() {
         eka.pelaajaHeittaaNoppaaKerran();

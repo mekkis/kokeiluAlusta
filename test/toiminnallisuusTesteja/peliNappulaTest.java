@@ -33,7 +33,7 @@ public class peliNappulaTest {
     @After
     public void tearDown() {
     }
-
+    
     @Test
     public void hello() {
         assertTrue(4 + 2 == 6);

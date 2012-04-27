@@ -25,7 +25,7 @@ public class Pelilauta extends JPanel implements KeyListener {
     toiminnallisuus.PelaaPeli peli;
 
     /**
-     * 
+     * konstruktori
      */
     public Pelilauta() {
         peli = new toiminnallisuus.PelaaPeli();

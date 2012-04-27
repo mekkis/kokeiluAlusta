@@ -17,7 +17,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
     private int l = 0;
 
     /**
-     * 
+     * konstruktori yksinkertaisemmalle kimblelle
      */
     public PelilautaSimple() {
         peli = new toiminnallisuus.PelaaPeli();
@@ -422,7 +422,7 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         g.drawString("vih heitti nopasta: " + peli.tekoAlyVihrea.nopanSilmaluku, 200, 600);
         g.drawString("sin heitti nopasta: " + peli.tekoAlySininen.nopanSilmaluku, 200, 615);
     }
-/*
+/*  //Nappuloiden sijaintitietoa graafiseen käyttöliittymään tarvittaessa
     private void redSijainnit(Graphics g) {
         g.drawString("red 1. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(0), 20, 180);
         g.drawString("red 2. sijainti" + peli.mikko.pylpyra.getNappulanSijainti(1), 20, 195);
@@ -537,6 +537,10 @@ public class PelilautaSimple extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * nopanheitto napin tehtävät, kun nappia painetaan
+     * @param ae
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         peli.pelausGui();
