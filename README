@@ -1,6 +1,7 @@
 Pelin käynnistäminen:
 1) avaa pääte ja siirry kansioon kokeiluAlusta
-2) käännä ohjelma komennolla: javac peliAlusta/KokeiluAlusta.java
-3) käynnistä ohjelma komennolla: java peliAlusta/KokeiluAlusta
-4) toimi pelissä annettujen ohjeiden mukaisesti
+2) käännä ohjelma komennolla: javac src/peliAlusta/KokeiluAlusta.java
+3) käynnistä ohjelma komennolla: java src/peliAlusta/KokeiluAlusta
+4) Noppaa heitetään painamalla nappia jossa lukee noppa.
+    Pelin voi lopettaa painamalla nappia exit.
 5) lopeta pääte komennolla: exit
