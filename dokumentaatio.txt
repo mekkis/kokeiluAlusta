@@ -1,7 +1,8 @@
 Ohjelmoinnin harjoitustyo kevat 2012
 Mika Kekäläinen
 
-DOKUMENTAATIO 1
+DOKUMENTAATIO 1 viikolle yksi, vain neparin käytön avuksi.
+Arvosteltava dokkari on .pdf muodossa. 
 
 Tyon aihe: Kimble
 Pelin idea:
